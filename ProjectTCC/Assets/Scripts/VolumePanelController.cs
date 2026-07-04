@@ -14,11 +14,19 @@ public class VolumePanelController : MonoBehaviour
 
     void OnEnable()
     {
-        if (volumeSlider == null || MusicManager.Instance == null)
+        if (volumeSlider == null)
             return;
 
-        // Evita disparar OnValueChanged (e re-setar o volume) durante a sincronização inicial
-        volumeSlider.SetValueWithoutNotify(MusicManager.Instance.CurrentVolume);
+        // Sincroniza o slider com o volume atual, se o MusicManager já estiver pronto.
+        // Se ainda não estiver (problema de ordem de execução), o slider fica no valor
+        // default do prefab, mas o listener abaixo garante que o volume passa a ser
+        // controlado normalmente assim que o usuário mexer na barra.
+        if (MusicManager.Instance != null)
+        {
+            // Evita disparar OnValueChanged (e re-setar o volume) durante a sincronização inicial
+            volumeSlider.SetValueWithoutNotify(MusicManager.Instance.CurrentVolume);
+        }
+
         AtualizarTexto(volumeSlider.value);
 
         volumeSlider.onValueChanged.AddListener(OnSliderValueChanged);

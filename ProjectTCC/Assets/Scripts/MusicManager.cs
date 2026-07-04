@@ -89,7 +89,12 @@ public class MusicManager : MonoBehaviour
 
     // Chamado pelo painel de configurações (RF-02)
    // Chamado pelo painel de configurações (RF-02)
-    public void SetVolume(float v) => _audioSource.volume = v;
+    // Chamado pelo painel de configurações (RF-02)
+public void SetVolume(float v)
+{
+    Debug.Log($"[MusicManager] SetVolume chamado com: {v}");
+    _audioSource.volume = v;
+}
 
     // Usado pelo painel pra sincronizar o slider ao abrir
     public float CurrentVolume => _audioSource.volume;
