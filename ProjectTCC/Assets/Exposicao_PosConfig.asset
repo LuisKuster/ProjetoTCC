@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ad3c2bad8b10b4082c2dc68f79e6d2, type: 3}
+  m_Name: Exposicao_PosConfig
+  m_EditorClassIdentifier: 
+  text: Apos os ajustes voce e gama partem para a missao
+  holdDuration: 4
+  onExpositionComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneToLoad: 
