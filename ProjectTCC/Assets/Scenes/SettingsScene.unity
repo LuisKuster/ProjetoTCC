@@ -152,6 +152,8 @@ MonoBehaviour:
   sceneMusics:
   - sceneName: SettingsScene
     clip: {fileID: 8300000, guid: 6147d6db536210f4897b03262d58a328, type: 3}
+  - sceneName: HouseFloor01
+    clip: {fileID: 8300000, guid: 8235fbbcba598664fb64be793eeac19f, type: 3}
   fadeSpeed: 1
 --- !u!82 &221316459
 AudioSource:

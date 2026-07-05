@@ -8,6 +8,8 @@ TagManager:
   - TeaLeaf
   - KettleSpout
   - SpawnPoint
+  - Document
+  - Documentos
   layers:
   - Default
   - TransparentFX

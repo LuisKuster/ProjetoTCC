@@ -52,6 +52,14 @@ public class ExpositionManager : MonoBehaviour
         yield return Fade(0f, 1f);
         yield return new WaitForSeconds(data.holdDuration);
 
+        // Fim de jogo: tela fica preta, encerra aqui
+        if (data.isEnding)
+        {
+            FreezePlayer();
+            data.onExpositionComplete?.Invoke();
+            yield break;
+        }
+
         if (roomToDisable != null) roomToDisable.SetActive(false);
         if (roomToEnable != null)
         {
@@ -87,6 +95,20 @@ public class ExpositionManager : MonoBehaviour
         player.transform.position = spawnPoint.position;
 
         if (characterController != null) characterController.enabled = true;
+    }
+
+    private void FreezePlayer()
+    {
+        var player = GameObject.FindWithTag(playerTag);
+        if (player == null) return;
+
+        // desliga o CharacterController pra parar a gravidade/movimento
+        var characterController = player.GetComponent<CharacterController>();
+        if (characterController != null) characterController.enabled = false;
+
+        // desliga os providers de locomoção pra travar qualquer input residual
+        var moveProviders = player.GetComponentsInChildren<UnityEngine.XR.Interaction.Toolkit.Locomotion.LocomotionProvider>();
+        foreach (var mp in moveProviders) mp.enabled = false;
     }
 
     private IEnumerator Fade(float from, float to)
