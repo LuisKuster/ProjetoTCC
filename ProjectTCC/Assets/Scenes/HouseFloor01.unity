@@ -508,7 +508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6354248137742700952, guid: 82767778b9fa97142ae6ba2a73be1030, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.61
+      value: -5.33
       objectReference: {fileID: 0}
     - target: {fileID: 6354248137742700952, guid: 82767778b9fa97142ae6ba2a73be1030, type: 3}
       propertyPath: m_LocalPosition.y
@@ -516,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6354248137742700952, guid: 82767778b9fa97142ae6ba2a73be1030, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.075
+      value: -4.36
       objectReference: {fileID: 0}
     - target: {fileID: 6354248137742700952, guid: 82767778b9fa97142ae6ba2a73be1030, type: 3}
       propertyPath: m_LocalRotation.w
@@ -549,6 +549,10 @@ PrefabInstance:
     - target: {fileID: 6354248137742700955, guid: 82767778b9fa97142ae6ba2a73be1030, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354248137742700955, guid: 82767778b9fa97142ae6ba2a73be1030, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3560,6 +3564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 666788452}
+  - component: {fileID: 666788453}
   m_Layer: 0
   m_Name: BicoChaleira
   m_TagString: KettleSpout
@@ -3576,12 +3581,33 @@ Transform:
   m_GameObject: {fileID: 666788451}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0582, z: 0.0127}
+  m_LocalPosition: {x: 0, y: -0.0429, z: 0.0127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1130660822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &666788453
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666788451}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.01
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &667660243
 GameObject:
   m_ObjectHideFlags: 0
@@ -5823,7 +5849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1095853590
 Transform:
   m_ObjectHideFlags: 0
@@ -6909,7 +6935,7 @@ Transform:
   m_GameObject: {fileID: 1217758653}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -72.167, y: 8.212, z: -4.895}
+  m_LocalPosition: {x: -72.12, y: 8.517, z: -4.678}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8993,9 +9019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaCup: {fileID: 1693812165}
-  bicoChaleira: {fileID: 666788452}
-  distanciaMaxima: 0.05
-  tempoParaEncher: 1
+  tagBicoChaleira: BicoChaleira
 --- !u!135 &1462411054
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10270,6 +10294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chaleira
       objectReference: {fileID: 0}
+    - target: {fileID: 8669150896070996395, guid: 970dbb5b667481e4db1203fea3895196, type: 3}
+      propertyPath: m_TagString
+      value: BicoChaleira
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -10316,15 +10344,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455846, guid: 7e8206774189fca4aba2e0ae2af661e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.123
+      value: -56.68
       objectReference: {fileID: 0}
     - target: {fileID: 455846, guid: 7e8206774189fca4aba2e0ae2af661e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.66
+      value: 8.58
       objectReference: {fileID: 0}
     - target: {fileID: 455846, guid: 7e8206774189fca4aba2e0ae2af661e3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.332
+      value: 14.15
       objectReference: {fileID: 0}
     - target: {fileID: 455846, guid: 7e8206774189fca4aba2e0ae2af661e3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13371,6 +13399,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1383945632}
     m_Modifications:
+    - target: {fileID: 285247970040244600, guid: 1e89689a925d6174ca91abcba4858f0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4007997858705787012, guid: 1e89689a925d6174ca91abcba4858f0b, type: 3}
       propertyPath: m_Name
       value: PortaCompletaDespensa
@@ -14430,6 +14462,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1383945632}
     m_Modifications:
+    - target: {fileID: 285247970040244600, guid: 1e89689a925d6174ca91abcba4858f0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4007997858705787012, guid: 1e89689a925d6174ca91abcba4858f0b, type: 3}
       propertyPath: m_Name
       value: PortaCompletaCozinha

@@ -10,6 +10,7 @@ TagManager:
   - SpawnPoint
   - Document
   - Documentos
+  - BicoChaleira
   layers:
   - Default
   - TransparentFX
