@@ -502,7 +502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 933735551223636883}
   m_InteractionLayers:
     m_Bits: 4
   m_DistanceCalculationMode: 1
@@ -675,7 +676,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 9153418782690488476}
   m_InteractionLayers:
     m_Bits: 4
   m_DistanceCalculationMode: 1
@@ -848,7 +850,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 608275940519239653}
   m_InteractionLayers:
     m_Bits: 4
   m_DistanceCalculationMode: 1
@@ -1553,7 +1556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1801649105520283244}
   m_InteractionLayers:
     m_Bits: 4
   m_DistanceCalculationMode: 1
