@@ -4,31 +4,41 @@ using TMPro;
 
 /// <summary>
 /// Controla o painel de volume: sincroniza o slider com o volume atual
-/// do MusicManager ao abrir, e atualiza o texto de porcentagem em tempo real.
+/// do MusicManager ao abrir e atualiza o texto de porcentagem em tempo real.
 /// </summary>
 public class VolumePanelController : MonoBehaviour
 {
     [Header("Referências")]
     [SerializeField] private Slider volumeSlider;
-    [SerializeField] private TMP_Text valueText; // troca pra "Text" (UnityEngine.UI) se não usar TextMeshPro
+    [SerializeField] private TMP_Text valueText;
+
+    private const string PREF_KEY = "volume_musica";
 
     void OnEnable()
     {
         if (volumeSlider == null)
-            return;
-
-        // Sincroniza o slider com o volume atual, se o MusicManager já estiver pronto.
-        // Se ainda não estiver (problema de ordem de execução), o slider fica no valor
-        // default do prefab, mas o listener abaixo garante que o volume passa a ser
-        // controlado normalmente assim que o usuário mexer na barra.
-        if (MusicManager.Instance != null)
         {
-            // Evita disparar OnValueChanged (e re-setar o volume) durante a sincronização inicial
-            volumeSlider.SetValueWithoutNotify(MusicManager.Instance.CurrentVolume);
+            Debug.LogWarning("[VolumePanel] Slider não atribuído no inspector.", this);
+            return;
         }
 
-        AtualizarTexto(volumeSlider.value);
+        // Garante a faixa correta mesmo que o prefab esteja com outros valores.
+        volumeSlider.minValue = 0f;
+        volumeSlider.maxValue = 1f;
+        volumeSlider.wholeNumbers = false;
 
+        // Se o MusicManager ainda não existir (ordem de execução), cai no valor salvo.
+        float volumeAtual = MusicManager.Instance != null
+            ? MusicManager.Instance.CurrentVolume
+            : PlayerPrefs.GetFloat(PREF_KEY, volumeSlider.value);
+
+        // SetValueWithoutNotify evita re-setar o volume durante a sincronização inicial.
+        volumeSlider.SetValueWithoutNotify(volumeAtual);
+        AtualizarTexto(volumeAtual);
+
+        // Remove antes de adicionar: protege contra listener duplicado se o
+        // objeto for reativado sem passar pelo OnDisable (ex.: durante troca de sala).
+        volumeSlider.onValueChanged.RemoveListener(OnSliderValueChanged);
         volumeSlider.onValueChanged.AddListener(OnSliderValueChanged);
     }
 
@@ -40,7 +50,11 @@ public class VolumePanelController : MonoBehaviour
 
     void OnSliderValueChanged(float value)
     {
-        MusicManager.Instance?.SetVolume(value);
+        if (MusicManager.Instance != null)
+            MusicManager.Instance.SetVolume(value);
+        else
+            PlayerPrefs.SetFloat(PREF_KEY, value); // não perde a escolha do jogador
+
         AtualizarTexto(value);
     }
 

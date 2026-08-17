@@ -1,24 +1,36 @@
 using UnityEngine;
+using System.Collections;
 
+/// <summary>
+/// Gerencia a música de fundo do jogo.
+/// O volume final do AudioSource é sempre o produto de dois fatores independentes:
+///   _volumeUsuario -> controlado pelo slider do painel de config (0..1)
+///   _fade          -> controlado internamente pelas corrotinas de transição (0..1)
+/// Isso impede que uma troca de música "resete" o volume escolhido pelo jogador.
+/// </summary>
+[RequireComponent(typeof(AudioSource))]
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance { get; private set; }
 
-    [Header("Músicas por Cena")]
-    [SerializeField] private SceneMusic[] sceneMusics;
-
     [Header("Config")]
+    [Tooltip("Quanto maior, mais rápido o crossfade entre músicas.")]
     [SerializeField] private float fadeSpeed = 1f;
 
-    private AudioSource _audioSource;
-    private string _currentScene = "";
+    [Tooltip("Volume usado na primeira vez que o jogo roda (antes de existir save).")]
+    [SerializeField, Range(0f, 1f)] private float volumePadrao = 0.5f;
 
-    [System.Serializable]
-    public class SceneMusic
-    {
-        public string sceneName;   // nome exato da cena no Build Settings
-        public AudioClip clip;
-    }
+    [Header("Música inicial (opcional)")]
+    [SerializeField] private AudioClip clipInicial;
+
+    private const string PREF_KEY = "volume_musica";
+
+    private AudioSource _audioSource;
+    private float _volumeUsuario = 1f;
+    private float _fade = 1f;
+
+    /// <summary>Volume escolhido pelo jogador (0..1). É isso que o slider deve exibir.</summary>
+    public float CurrentVolume => _volumeUsuario;
 
     void Awake()
     {
@@ -28,74 +40,84 @@ public class MusicManager : MonoBehaviour
 
         _audioSource = GetComponent<AudioSource>();
         _audioSource.loop = true;
+        _audioSource.playOnAwake = false;
+
+        _volumeUsuario = PlayerPrefs.GetFloat(PREF_KEY, volumePadrao);
+        AplicarVolume();
     }
 
-    void OnEnable()
+    void Start()
     {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+        if (clipInicial != null)
+            TocarMusica(clipInicial);
     }
 
-    void OnDisable()
+    // ---------------------------------------------------------------- VOLUME
+
+    /// <summary>Chamado pelo painel de configurações (RF-02).</summary>
+    public void SetVolume(float v)
     {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+        _volumeUsuario = Mathf.Clamp01(v);
+        AplicarVolume();
+
+        PlayerPrefs.SetFloat(PREF_KEY, _volumeUsuario);
+        PlayerPrefs.Save();
     }
 
-    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, 
-                       UnityEngine.SceneManagement.LoadSceneMode mode)
+    private void AplicarVolume()
     {
-        if (scene.name == _currentScene) return;
-        _currentScene = scene.name;
-
-        foreach (var sm in sceneMusics)
-        {
-            if (sm.sceneName == scene.name && sm.clip != null)
-            {
-                TrocarMusica(sm.clip);
-                return;
-            }
-        }
-
-        // Nenhuma música definida pra essa cena — para o áudio
-        _audioSource.Stop();
+        _audioSource.volume = _volumeUsuario * _fade;
     }
 
-    void TrocarMusica(AudioClip novoClip)
+    // ----------------------------------------------------------- TROCA/FADE
+
+    /// <summary>Faz crossfade para o clip informado. Ignora se já for o clip atual.</summary>
+    public void TocarMusica(AudioClip novoClip)
     {
-        if (_audioSource.clip == novoClip) return;
+        if (novoClip == null) return;
+        if (_audioSource.clip == novoClip && _audioSource.isPlaying) return;
+
         StopAllCoroutines();
-        StartCoroutine(FadeTrocar(novoClip));
+        StartCoroutine(RotinaTrocar(novoClip));
     }
 
-    System.Collections.IEnumerator FadeTrocar(AudioClip novoClip)
+    /// <summary>Faz fade out e para o áudio.</summary>
+    public void PararMusica()
     {
-        // Fade out
-        while (_audioSource.volume > 0)
-        {
-            _audioSource.volume -= fadeSpeed * Time.deltaTime;
-            yield return null;
-        }
+        StopAllCoroutines();
+        StartCoroutine(RotinaParar());
+    }
 
-        _audioSource.Stop();
+    private IEnumerator RotinaTrocar(AudioClip novoClip)
+    {
+        if (_audioSource.isPlaying)
+            yield return FadeAte(0f);
+
         _audioSource.clip = novoClip;
         _audioSource.Play();
 
-        // Fade in
-        while (_audioSource.volume < 1)
-        {
-            _audioSource.volume += fadeSpeed * Time.deltaTime;
-            yield return null;
-        }
+        yield return FadeAte(1f);
     }
 
-    // Chamado pelo painel de configurações (RF-02)
-   // Chamado pelo painel de configurações (RF-02)
-    // Chamado pelo painel de configurações (RF-02)
-public void SetVolume(float v)
-{
-    Debug.Log($"[MusicManager] SetVolume chamado com: {v}");
-    _audioSource.volume = v;
-}
+    private IEnumerator RotinaParar()
+    {
+        yield return FadeAte(0f);
+        _audioSource.Stop();
+        _audioSource.clip = null;
+    }
 
-    // Usado pelo painel pra sincronizar o slider ao abrir
-    public float CurrentVolume => _audioSource.volume;
+    private IEnumerator FadeAte(float alvo)
+    {
+        // Time.unscaledDeltaTime: se em algum momento você pausar o jogo com
+        // timeScale = 0 pra abrir o menu, o fade não trava.
+        while (!Mathf.Approximately(_fade, alvo))
+        {
+            _fade = Mathf.MoveTowards(_fade, alvo, fadeSpeed * Time.unscaledDeltaTime);
+            AplicarVolume();
+            yield return null;
+        }
+
+        _fade = alvo;
+        AplicarVolume();
+    }
 }
