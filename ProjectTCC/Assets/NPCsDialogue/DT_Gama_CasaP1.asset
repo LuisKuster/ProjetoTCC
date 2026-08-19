@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe8d2329ca146e42a5a9914070a68fd, type: 3}
+  m_Name: DT_Gama_CasaP1
+  m_EditorClassIdentifier: 
+  npcName: 
+  audioEntrada: {fileID: 0}
+  nodes:
+  - id: no_1
+    mostrarNoInicio: 0
+    perguntaTexto: "\tQuem \xE9 voc\xEA?"
+    respostaTexto: "Luiz Gama. Nasci livre, em Salvador, em 1830. Minha m\xE3e, Lu\xEDsa
+      Mahin, era africana e liberta."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_1.1
+    eventoId: 
+  - id: no_1.1
+    mostrarNoInicio: 0
+    perguntaTexto: "E sua m\xE3e?"
+    respostaTexto: Ela lutou. Dizem que teve parte nas revoltas da Bahia. Um dia
+      partiu e eu nunca mais a encontrei.
+    respostaAudio: {fileID: 0}
+    substituirPor: n_1.2
+    eventoId: 
+  - id: no_1.2
+    mostrarNoInicio: 0
+    perguntaTexto: "Por que s\xF3 eu te escuto?"
+    respostaTexto: "Porque eu j\xE1 n\xE3o estou aqui. Morri em 1882, e estamos em
+      1886. O que voc\xEA v\xEA \xE9 o que ficou do que eu fiz. E ainda tem servi\xE7o."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_2
+    mostrarNoInicio: 0
+    perguntaTexto: "Como voc\xEA foi escravizado?"
+    respostaTexto: "Aos dez anos, meu pai perdeu no jogo e me vendeu. Vendeu o pr\xF3prio
+      filho, nascido livre. Fui parar em S\xE3o Paulo."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_2.1
+    eventoId: 
+  - id: no_2.1
+    mostrarNoInicio: 0
+    perguntaTexto: Isso era legal?
+    respostaTexto: "Nunca foi. Mas o que \xE9 ilegal e o que acontece s\xE3o coisas
+      diferentes num pa\xEDs escravista."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_3
+    mostrarNoInicio: 0
+    perguntaTexto: Como conseguiu a liberdade?
+    respostaTexto: "Aos dezessete anos aprendi a ler com um estudante de Direito.
+      Foi lendo que achei a prova de que eu era livre \u2014 e provei."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_3.1
+    eventoId: 
+  - id: no_3.1
+    mostrarNoInicio: 0
+    perguntaTexto: Ler mudou tanto assim?
+    respostaTexto: "Mudou tudo. A palavra escrita foi a \xFAnica arma que me deixaram
+      pegar."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_4
+    mostrarNoInicio: 0
+    perguntaTexto: "Voc\xEA \xE9 advogado?"
+    respostaTexto: "N\xE3o tenho diploma. Chamam gente como eu de r\xE1bula. Ainda
+      assim, levei mais de quinhentas pessoas \xE0 liberdade nos tribunais."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_4.1
+    eventoId: 
+  - id: no_4.1
+    mostrarNoInicio: 0
+    perguntaTexto: Como se ganha um caso desses?
+    respostaTexto: "Provando que a escraviza\xE7\xE3o foi ilegal. Suba ao escrit\xF3rio
+      e fale comigo l\xE1. \xC9 l\xE1 que os pap\xE9is mentem."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
