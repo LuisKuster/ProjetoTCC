@@ -10,7 +10,7 @@ public class VolumePanelController : MonoBehaviour
 {
     [Header("Referências")]
     [SerializeField] private Slider volumeSlider;
-    [SerializeField] private TMP_Text valueText;
+    [SerializeField] private Text valueText;
 
     private const string PREF_KEY = "volume_musica";
 
