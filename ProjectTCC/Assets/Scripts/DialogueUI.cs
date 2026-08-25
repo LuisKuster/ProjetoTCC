@@ -1,26 +1,40 @@
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+/// <summary>
+/// Controla os dois canvas do NPC: o de perguntas (QuestionBoxes) e o de
+/// resposta (DialogueBox).
+///
+/// Coloque este componente no NPC_Base — NÃO num dos canvas, porque ele
+/// precisa continuar ativo enquanto liga e desliga os dois.
+/// </summary>
 public class DialogueUI : MonoBehaviour
 {
-    [Header("Boxes de Pergunta")]
-    [SerializeField] private GameObject[]      boxObjects;      // Box_01 a Box_04
-    [SerializeField] private TextMeshProUGUI[] boxLabels;
-    [SerializeField] private Image[]           boxBackgrounds;
+    [Header("Raízes de UI")]
+    [Tooltip("O canvas QuestionBoxes.")]
+    [SerializeField] private GameObject questionBoxesRoot;
+    [Tooltip("O canvas DialogueBox (o do scroll).")]
+    [SerializeField] private GameObject dialogueBoxRoot;
 
-    [Header("Box de Resposta")]
-    [SerializeField] private GameObject        respostaPanel;
-    [SerializeField] private TextMeshProUGUI   respostaLabel;
+    [Header("Botões de Pergunta")]
+    [Tooltip("Arraste Button01..Button04 NA ORDEM — a hierarquia está fora de ordem.")]
+    [SerializeField] private DialogueOptionButton[] botoes;
+
+    [Header("Resposta")]
+    [SerializeField] private ScrollRect scrollResposta;
+    [SerializeField] private TMP_Text   respostaTMP;
+    [SerializeField] private Text       respostaLegado;
+
+    [Tooltip("Opcional: o Header do scroll, para mostrar o nome do NPC.")]
+    [SerializeField] private TMP_Text headerTMP;
+    [SerializeField] private Text     headerLegado;
 
     [Header("Cores")]
-    [SerializeField] private Color corNormal        = Color.white;
-    [SerializeField] private Color corHover         = new Color(1f, 0.95f, 0.6f);
-    [SerializeField] private Color corVisitada      = Color.gray;
-    [SerializeField] private Color corVisitadaHover = new Color(0.75f, 0.75f, 0.75f);
+    [Tooltip("Cor do Outline quando a pergunta já foi feita.")]
+    [SerializeField] private Color corVisitada = new Color(0.45f, 0.45f, 0.45f);
 
     [Header("Áudio")]
     [SerializeField] private AudioSource audioSource;
@@ -30,21 +44,22 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private DialogueEventBinder eventBinder;
 
     [Header("Config")]
-    [Tooltip("Trava anti-duplo-disparo entre poke e ray.")]
+    [Tooltip("Trava anti-duplo-disparo entre poke e raio.")]
     [SerializeField] private float cooldownClique = 0.25f;
 
-    private DialogueTree _tree;
-    private XRSimpleInteractable[] _interactables;
+    [Tooltip("Esconde o painel de resposta enquanto nenhuma pergunta foi feita.")]
+    [SerializeField] private bool esconderRespostaVazia = true;
 
-    /// <summary>Qual nó está em cada box agora. -1 = box vazia.</summary>
-    private int[] _noDaBox;
+    private DialogueTree _tree;
+
+    /// <summary>Qual nó está em cada botão agora. -1 = botão vazio.</summary>
+    private int[] _noDoBotao;
 
     /// <summary>Progresso de runtime, por id de nó. Não vive no ScriptableObject.</summary>
     private readonly HashSet<string> _visitados = new HashSet<string>();
 
     private readonly Dictionary<string, int> _indicePorId = new Dictionary<string, int>();
 
-    private int   _emHover = -1;
     private float _ultimoClique = -999f;
     private bool  _inicializado;
     private bool  _montado;
@@ -56,45 +71,35 @@ public class DialogueUI : MonoBehaviour
         if (_inicializado) return;
         _inicializado = true;
 
-        _interactables = new XRSimpleInteractable[boxObjects.Length];
-        _noDaBox = new int[boxObjects.Length];
-        for (int i = 0; i < _noDaBox.Length; i++) _noDaBox[i] = -1;
+        _noDoBotao = new int[botoes.Length];
+        for (int i = 0; i < _noDoBotao.Length; i++) _noDoBotao[i] = -1;
 
-        for (int i = 0; i < boxObjects.Length; i++)
+        for (int i = 0; i < botoes.Length; i++)
         {
-            if (boxObjects[i] == null) continue;
-
-            var it = boxObjects[i].GetComponent<XRSimpleInteractable>();
-            _interactables[i] = it;
-
-            if (it == null)
+            if (botoes[i] == null)
             {
-                Debug.LogError($"[DialogueUI] '{boxObjects[i].name}' não tem XRSimpleInteractable.", boxObjects[i]);
+                Debug.LogError($"[DialogueUI] '{name}': botão {i} está vazio no Inspector.", this);
                 continue;
             }
 
-            int idx = i;
-            it.selectEntered.AddListener(_ => OnBoxClicked(idx));
-            it.hoverEntered.AddListener(_ => OnBoxHover(idx, true));
-            it.hoverExited .AddListener(_ => OnBoxHover(idx, false));
+            botoes[i].Init(i);
+            botoes[i].AoClicar += OnBotaoClicado;
         }
+
+        if (questionBoxesRoot != null) questionBoxesRoot.SetActive(false);
+        if (dialogueBoxRoot   != null) dialogueBoxRoot.SetActive(false);
     }
 
     void OnDestroy()
     {
-        if (_interactables == null) return;
-
-        foreach (var it in _interactables)
-        {
-            if (it == null) continue;
-            it.selectEntered.RemoveAllListeners();
-            it.hoverEntered .RemoveAllListeners();
-            it.hoverExited  .RemoveAllListeners();
-        }
+        if (botoes == null) return;
+        foreach (var b in botoes)
+            if (b != null) b.AoClicar -= OnBotaoClicado;
     }
 
-    // ---------------- Abertura ----------------
+    // ---------------- Abertura / fechamento ----------------
 
+    /// <summary>Chamado pelo NPCInteractable quando o player entra no raio.</summary>
     public void Setup(DialogueTree tree)
     {
         Inicializar();
@@ -110,21 +115,44 @@ public class DialogueUI : MonoBehaviour
 
         if (arvoreNova) IndexarArvore();
 
-        // Só remonta na primeira vez ou se a árvore mudou. Assim as boxes que já
-        // foram substituídas continuam substituídas quando o player volta.
+        // Só remonta na primeira vez ou se a árvore mudou. Assim os botões já
+        // substituídos continuam substituídos quando o player volta.
         if (arvoreNova || !_montado)
         {
-            MontarBoxesIniciais();
+            MontarBotoesIniciais();
             _montado = true;
         }
 
-        _emHover = -1;
-        respostaPanel.SetActive(false);
+        if (questionBoxesRoot != null) questionBoxesRoot.SetActive(true);
+
+        DefinirHeader(tree.npcName);
+        DefinirResposta(string.Empty);
+
+        if (dialogueBoxRoot != null)
+            dialogueBoxRoot.SetActive(!esconderRespostaVazia);
+
+        for (int i = 0; i < botoes.Length; i++) AplicarBotao(i);
 
         Falar(tree.audioEntrada);
-
-        for (int i = 0; i < boxObjects.Length; i++) AplicarBox(i);
     }
+
+    public void FecharTudo()
+    {
+        if (audioSource != null) audioSource.Stop();
+
+        foreach (var b in botoes)
+            if (b != null) b.LimparFoco();
+
+        if (questionBoxesRoot != null) questionBoxesRoot.SetActive(false);
+        if (dialogueBoxRoot   != null) dialogueBoxRoot.SetActive(false);
+    }
+
+    public void FecharResposta()
+    {
+        if (dialogueBoxRoot != null) dialogueBoxRoot.SetActive(false);
+    }
+
+    // ---------------- Montagem ----------------
 
     void IndexarArvore()
     {
@@ -137,51 +165,40 @@ public class DialogueUI : MonoBehaviour
         }
     }
 
-    void MontarBoxesIniciais()
+    void MontarBotoesIniciais()
     {
-        int box = 0;
+        int b = 0;
 
-        for (int i = 0; i < _tree.nodes.Count && box < boxObjects.Length; i++)
+        for (int i = 0; i < _tree.nodes.Count && b < botoes.Length; i++)
         {
             if (!_tree.nodes[i].mostrarNoInicio) continue;
-            _noDaBox[box++] = i;
+            _noDoBotao[b++] = i;
         }
 
-        for (; box < boxObjects.Length; box++) _noDaBox[box] = -1;
+        for (; b < botoes.Length; b++) _noDoBotao[b] = -1;
     }
 
-    /// <summary>Escreve na box o conteúdo do nó que está nela agora.</summary>
-    void AplicarBox(int box)
+    void AplicarBotao(int b)
     {
-        if (boxObjects[box] == null) return;
+        if (botoes[b] == null) return;
 
-        int no = _noDaBox[box];
-        bool ativa = no >= 0 && no < _tree.nodes.Count;
+        int no = _noDoBotao[b];
+        bool ativo = no >= 0 && no < _tree.nodes.Count;
 
-        boxObjects[box].SetActive(ativa);
-        if (!ativa) return;
+        botoes[b].DefinirVisivel(ativo);
+        if (!ativo) return;
 
-        boxLabels[box].text = _tree.nodes[no].perguntaTexto;
-        AtualizarCor(box);
+        botoes[b].DefinirTexto(_tree.nodes[no].perguntaTexto);
+        botoes[b].DefinirVisitada(_visitados.Contains(_tree.nodes[no].id), corVisitada);
     }
 
-    // ---------------- Interação ----------------
+    // ---------------- Clique ----------------
 
-    void OnBoxHover(int box, bool entrou)
-    {
-        if (_tree == null || _noDaBox[box] < 0) return;
-
-        if (entrou) _emHover = box;
-        else if (_emHover == box) _emHover = -1;
-
-        AtualizarCor(box);
-    }
-
-    void OnBoxClicked(int box)
+    void OnBotaoClicado(int b)
     {
         if (_tree == null) return;
 
-        int no = _noDaBox[box];
+        int no = _noDoBotao[b];
         if (no < 0 || no >= _tree.nodes.Count) return;
 
         if (Time.unscaledTime - _ultimoClique < cooldownClique) return;
@@ -192,8 +209,8 @@ public class DialogueUI : MonoBehaviour
         _visitados.Add(node.id);
 
         // Texto e voz saem juntos.
-        respostaLabel.text = node.respostaTexto;
-        respostaPanel.SetActive(true);
+        if (dialogueBoxRoot != null) dialogueBoxRoot.SetActive(true);
+        DefinirResposta(node.respostaTexto);
         Falar(node.respostaAudio);
 
         // Evento de mundo, se o nó tiver um.
@@ -204,20 +221,54 @@ public class DialogueUI : MonoBehaviour
                                   $"'{node.eventoId}', mas não há DialogueEventBinder ligado.", this);
         }
 
-        // Substituição: a box passa a mostrar outra pergunta.
+        // Substituição: o botão passa a mostrar outra pergunta.
         if (!string.IsNullOrEmpty(node.substituirPor) &&
             _indicePorId.TryGetValue(node.substituirPor, out int proximo))
         {
-            _noDaBox[box] = proximo;
-            AplicarBox(box);   // o nó novo entra com a cor padrão, se ainda não foi visto
-            return;
+            _noDoBotao[b] = proximo;
         }
 
-        AtualizarCor(box);
+        AplicarBotao(b);
+    }
+
+    // ---------------- Texto ----------------
+
+    void DefinirResposta(string texto)
+    {
+        if (respostaTMP    != null) respostaTMP.text    = texto;
+        if (respostaLegado != null) respostaLegado.text = texto;
+
+        if (scrollResposta != null && isActiveAndEnabled)
+            StartCoroutine(VoltarScrollAoTopo());
+    }
+
+    /// <summary>
+    /// O ContentSizeFitter só recalcula a altura no fim do frame. Mexer no
+    /// scroll antes disso não tem efeito — daí o WaitForEndOfFrame.
+    /// </summary>
+    IEnumerator VoltarScrollAoTopo()
+    {
+        yield return new WaitForEndOfFrame();
+
+        if (scrollResposta == null) yield break;
+
+        Canvas.ForceUpdateCanvases();
+        scrollResposta.verticalNormalizedPosition = 1f;
+    }
+
+    void DefinirHeader(string nome)
+    {
+        if (string.IsNullOrEmpty(nome)) return;
+        if (headerTMP    != null) headerTMP.text    = nome;
+        if (headerLegado != null) headerLegado.text = nome;
     }
 
     // ---------------- Áudio ----------------
 
+    /// <summary>
+    /// Stop + clip + Play em vez de PlayOneShot: uma fala corta a anterior
+    /// em vez de empilhar quando o jogador clica rápido em vários botões.
+    /// </summary>
     void Falar(AudioClip clip)
     {
         if (audioSource == null || clip == null) return;
@@ -227,44 +278,14 @@ public class DialogueUI : MonoBehaviour
         audioSource.Play();
     }
 
-    // ---------------- Cores ----------------
-
-    void AtualizarCor(int box)
-    {
-        if (boxBackgrounds == null || box >= boxBackgrounds.Length) return;
-        if (boxBackgrounds[box] == null) return;
-
-        int no = _noDaBox[box];
-        if (no < 0) return;
-
-        bool visitada = _visitados.Contains(_tree.nodes[no].id);
-        bool hover    = _emHover == box;
-
-        boxBackgrounds[box].color = visitada
-            ? (hover ? corVisitadaHover : corVisitada)
-            : (hover ? corHover         : corNormal);
-    }
-
     // ---------------- API ----------------
 
-    public void FecharResposta() => respostaPanel.SetActive(false);
-
-    public void FecharTudo()
-    {
-        if (audioSource != null) audioSource.Stop();
-
-        _emHover = -1;
-        respostaPanel.SetActive(false);
-        gameObject.SetActive(false);
-    }
-
-    /// <summary>Volta a conversa ao estado inicial (boxes originais, nada visitado).</summary>
     public void ReiniciarProgresso()
     {
         _visitados.Clear();
         if (_tree == null) return;
 
-        MontarBoxesIniciais();
-        for (int i = 0; i < boxObjects.Length; i++) AplicarBox(i);
+        MontarBotoesIniciais();
+        for (int i = 0; i < botoes.Length; i++) AplicarBotao(i);
     }
 }
