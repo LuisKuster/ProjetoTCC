@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe8d2329ca146e42a5a9914070a68fd, type: 3}
+  m_Name: DT_Benedita_A
+  m_EditorClassIdentifier: 
+  npcName: 
+  audioEntrada: {fileID: 0}
+  nodes:
+  - id: no_1
+    mostrarNoInicio: 1
+    perguntaTexto: "O que voc\xEA faz aqui?"
+    respostaTexto: "Cozinho, lavo, engomo, sirvo e cuido das crian\xE7as da casa.
+      Come\xE7o antes do sol e termino depois dele."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_1.1
+    eventoId: 
+  - id: no_1.1
+    mostrarNoInicio: 0
+    perguntaTexto: "Voc\xEA descansa?"
+    respostaTexto: "Domingo de manh\xE3, se a casa deixar. E olhe l\xE1."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_2
+    mostrarNoInicio: 1
+    perguntaTexto: "Voc\xEA mora nesta casa?"
+    respostaTexto: "Durmo num cub\xEDculo atr\xE1s da cozinha. Estar perto dos senhores
+      n\xE3o \xE9 privil\xE9gio \xE9 ter os olhos deles em cima o dia inteiro."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_3
+    mostrarNoInicio: 1
+    perguntaTexto: "Voc\xEA tem filhos?"
+    respostaTexto: "Tenho um. O Tom\xE9. Ele nasceu livre  e o papel que prova isso
+      est\xE1 trancado no cofre do escrit\xF3rio."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_3.1
+    eventoId: 
+  - id: no_3.1
+    mostrarNoInicio: 0
+    perguntaTexto: Como assim, nasceu livre?
+    respostaTexto: "Tem uma lei de 1871. Mas lei sem papel n\xE3o vale nada. Sem
+      aquele papel, meu filho \xE9 escravo do jeito que ele quiser dizer que \xE9."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_4
+    mostrarNoInicio: 1
+    perguntaTexto: Como assim, nasceu livre?
+    respostaTexto: "Tem uma lei de 1871. Mas lei sem papel n\xE3o vale nada. Sem
+      aquele papel, meu filho \xE9 escravo do jeito que ele quiser dizer que \xE9."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_4.1
+    eventoId: 
+  - id: no_4.1
+    mostrarNoInicio: 0
+    perguntaTexto: Como?
+    respostaTexto: "Ele toma ch\xE1 toda tarde, h\xE1 vinte anos, sempre o mesmo.E
+      toda vez ele tem que ir no banheiro por um tempo, \xE9 ai que a gente entra
+      e procura."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_4.2
+    eventoId: 
+  - id: no_4.2
+    mostrarNoInicio: 0
+    perguntaTexto: Tudo bem deixa que eu preparo o cha, aonde estao os ingredientes?
+    respostaTexto: "A chaleira est\xE1 no fogao da cozinha, as folhas voce pode achar
+      na despensa ao lado da cozinha, a xicara esta na sala de jantar, prepare tudo
+      e me entregue, eu levo pra ele."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_4.2
+    eventoId: 
