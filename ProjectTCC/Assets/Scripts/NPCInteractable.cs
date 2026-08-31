@@ -4,11 +4,13 @@ using UnityEngine;
 public class NPCInteractable : MonoBehaviour
 {
     [Header("Referências")]
-    [Tooltip("O DialogueUI — agora vive no próprio NPC_Base, não num canvas.")]
     [SerializeField] private DialogueUI dialogueUI;
 
     [Tooltip("Deixe vazio: ele acha a Main Camera sozinho no Start.")]
     [SerializeField] private Transform playerHead;
+
+    [Tooltip("Opcional. Se preenchido, o NPC para de andar enquanto conversa.")]
+    [SerializeField] private NPCPatrol patrulha;
 
     [Header("Highlight")]
     [SerializeField] private Renderer[] meshRenderers;
@@ -23,8 +25,13 @@ public class NPCInteractable : MonoBehaviour
     [Header("Giro")]
     [SerializeField] private float velocidadeGiro = 4f;
     [SerializeField] private bool  seguirPlayer = true;
-    [SerializeField] private bool  voltarRotacaoOriginal = true;
+
+    [Tooltip("Segundos antes de voltar ao normal depois que o player sai.")]
     [SerializeField] private float delayParaVoltar = 3f;
+
+    [Tooltip("Só para NPCs SEM patrulha: volta à rotação original após o delay. " +
+             "Com patrulha, o NPC retoma o caminho e este campo é ignorado.")]
+    [SerializeField] private bool voltarRotacaoOriginal = true;
 
     private static readonly int IdBaseColor = Shader.PropertyToID("_BaseColor");
     private static readonly int IdColor     = Shader.PropertyToID("_Color");
@@ -44,11 +51,9 @@ public class NPCInteractable : MonoBehaviour
 
         _rotacaoInicial = transform.rotation;
 
-        if (playerHead == null && Camera.main != null)
-            playerHead = Camera.main.transform;
-
-        if (dialogueUI == null)
-            dialogueUI = GetComponent<DialogueUI>();
+        if (playerHead == null && Camera.main != null) playerHead = Camera.main.transform;
+        if (dialogueUI == null) dialogueUI = GetComponent<DialogueUI>();
+        if (patrulha   == null) patrulha   = GetComponent<NPCPatrol>();
 
         if (dialogueUI == null)
             Debug.LogError($"[NPCInteractable] '{name}': não achei o DialogueUI.", this);
@@ -59,6 +64,7 @@ public class NPCInteractable : MonoBehaviour
 
     void Update()
     {
+        // Conversando: encara o player e ignora o resto.
         if (_playerNoRange)
         {
             if (playerHead == null || !seguirPlayer) return;
@@ -66,8 +72,19 @@ public class NPCInteractable : MonoBehaviour
             return;
         }
 
-        if (!voltarRotacaoOriginal || _tempoDeSaida < 0f) return;
+        if (_tempoDeSaida < 0f) return;
         if (Time.time - _tempoDeSaida < delayParaVoltar) return;
+
+        // Passou o delay. Com patrulha, retoma o caminho — o próprio NPCPatrol
+        // cuida da rotação a partir daqui.
+        if (patrulha != null)
+        {
+            patrulha.Retomar();
+            _tempoDeSaida = -1f;
+            return;
+        }
+
+        if (!voltarRotacaoOriginal) { _tempoDeSaida = -1f; return; }
 
         transform.rotation = Quaternion.Slerp(
             transform.rotation, _rotacaoInicial, velocidadeGiro * Time.deltaTime);
@@ -86,6 +103,7 @@ public class NPCInteractable : MonoBehaviour
         _playerNoRange = true;
         _tempoDeSaida  = -1f;
 
+        patrulha?.Pausar();   // para de andar para conversar
         SetHighlight(true);
         dialogueUI?.Setup(dialogueTree);
     }
@@ -95,7 +113,7 @@ public class NPCInteractable : MonoBehaviour
         if (!_playerNoRange || !other.CompareTag("Player")) return;
 
         _playerNoRange = false;
-        _tempoDeSaida  = Time.time;
+        _tempoDeSaida  = Time.time;   // começa a contagem dos 3 segundos
 
         SetHighlight(false);
         dialogueUI?.FecharTudo();
