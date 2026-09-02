@@ -79,4 +79,4 @@ MonoBehaviour:
       e me entregue, eu levo pra ele."
     respostaAudio: {fileID: 0}
     substituirPor: no_4.2
-    eventoId: 
+    eventoId: cha_iniciado

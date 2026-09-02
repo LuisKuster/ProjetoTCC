@@ -7,6 +7,11 @@ public class TeaCup : MonoBehaviour
     [SerializeField] private bool temFolhas = false;
     [SerializeField] private bool temAgua = false;
 
+    [Header("Quando ficar pronta")]
+    [Tooltip("Tag aplicada na xícara ao ficar pronta, para a ItemDeliveryZone aceitar ela. " +
+             "Precisa existir no Tag Manager. Deixe vazio para não trocar.")]
+    [SerializeField] private string tagQuandoPronta = "Documentos";
+
     public bool TemFolhas => temFolhas;
     public bool TemAgua => temAgua;
     public bool EstaPronta => temFolhas && temAgua;
@@ -33,10 +38,14 @@ public class TeaCup : MonoBehaviour
 
     private void AtualizarEstadoPronta()
     {
-        if (EstaPronta)
-        {
-            print("Xicara pronta!");
-            // aqui depois entra troca de material/mesh, habilitar próximo objetivo, etc.
-        }
+        if (!EstaPronta) return;
+
+        // A troca de tag é o que libera a entrega: a ItemDeliveryZone da Benedita
+        // só reage a quem tem a tag dela.
+        if (!string.IsNullOrWhiteSpace(tagQuandoPronta))
+            gameObject.tag = tagQuandoPronta;
+
+        print($"Xicara pronta! Tag agora: {gameObject.tag}");
+        // aqui depois entra troca de material/mesh, habilitar próximo objetivo, etc.
     }
 }
