@@ -56,9 +56,9 @@ MonoBehaviour:
     eventoId: 
   - id: no_4
     mostrarNoInicio: 1
-    perguntaTexto: Como assim, nasceu livre?
-    respostaTexto: "Tem uma lei de 1871. Mas lei sem papel n\xE3o vale nada. Sem
-      aquele papel, meu filho \xE9 escravo do jeito que ele quiser dizer que \xE9."
+    perguntaTexto: "Por que voc\xEA n\xE3o pega?"
+    respostaTexto: "A porta est\xE1 trancada por dentro, e ele est\xE1 l\xE1. Cozinheira
+      n\xE3o bate na porta do escrit\xF3rio. Mas e eu sei como fazer ele sair."
     respostaAudio: {fileID: 0}
     substituirPor: no_4.1
     eventoId: 

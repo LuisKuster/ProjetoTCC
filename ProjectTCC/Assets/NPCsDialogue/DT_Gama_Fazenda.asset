@@ -14,4 +14,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: 
   audioEntrada: {fileID: 0}
-  nodes: []
+  nodes:
+  - id: no_1
+    mostrarNoInicio: 0
+    perguntaTexto: "Voce sempre agiu sozinho? Quem lutou junto com voc\xEA?"
+    respostaTexto: "Joaquim Nabuco, no Parlamento, Jos\xE9 do Patroc\xEDnio, nos
+      jornais e Andr\xE9 Rebou\xE7as, engenheiro, Cada um com a arma que tinha.\""
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_2
+    mostrarNoInicio: 0
+    perguntaTexto: As pessoas escravizadas resistiam?
+    respostaTexto: "Sempre. Fugindo, formando quilombo, indo \xE0 Justi\xE7a, quebrando
+      ferramenta, guardando sua f\xE9, trocando a folha do ch\xE1. Resistir era a
+      rotina, n\xE3o a exce\xE7\xE3o. Voc\xEA j\xE1 viu tr\xEAs hoje e nem percebeu."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_3
+    mostrarNoInicio: 0
+    perguntaTexto: A alforria garante liberdade pra sempre?
+    respostaTexto: "As leis vieram atr\xE1s, nunca na frente. Cada uma foi arrancada,
+      n\xE3o presenteada."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_3.1
+    mostrarNoInicio: 0
+    perguntaTexto: Como assim?
+    respostaTexto: "Quando voc\xEA ouvir algu\xE9m dizer que a escravid\xE3o acabou
+      porque algu\xE9m l\xE1 em cima teve bondade, lembre de quem voc\xEA conheceu
+      aqui. Nenhuma assinatura vem antes da briga que a obrigou."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_4
+    mostrarNoInicio: 0
+    perguntaTexto: Como isso vai terminar?
+    respostaTexto: "Vai acabar. N\xE3o sei o dia e n\xE3o vou estar l\xE1. Termine
+      o que veio fazer e volte aqui."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 

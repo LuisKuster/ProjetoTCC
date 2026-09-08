@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe8d2329ca146e42a5a9914070a68fd, type: 3}
+  m_Name: DT_Ze_2
+  m_EditorClassIdentifier: 
+  npcName: 
+  audioEntrada: {fileID: 0}
+  nodes:
+  - id: no_1
+    mostrarNoInicio: 0
+    perguntaTexto: "Voc\xEA fica com alguma coisa do que ganha?"
+    respostaTexto: "Se eu ganhar acima do combinado, o resto \xE9 meu pec\xFAlio.
+      Guardo h\xE1 nove anos, numa caixa que tamb\xE9m n\xE3o \xE9 minha."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_1.1
+    eventoId: 
+  - id: no_1.1
+    mostrarNoInicio: 0
+    perguntaTexto: "Pra qu\xEA?"
+    respostaTexto: "Pra comprar minha carta de alforria. \xC9 caro. Muita gente morre
+      juntando."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_1.2
+    eventoId: 
+  - id: no_1.2
+    mostrarNoInicio: 0
+    perguntaTexto: Sozinho?
+    respostaTexto: "A irmandade. A gente se cotiza, compra a liberdade de um por
+      vez, e esse a\xED ajuda o pr\xF3ximo. \xC9 devagar, mas \xE9 nosso e ningu\xE9m
+      nos deu."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_2
+    mostrarNoInicio: 0
+    perguntaTexto: O que se fala na vila?
+    respostaTexto: Voce nao ouviu isso de mim mas tem gente sumindo das fazendas
+      toda semana. E que tem gente na cidade escondendo quem some.
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_3
+    mostrarNoInicio: 0
+    perguntaTexto: O que se fala nos Jornais?
+    respostaTexto: "Tem uns homens que n\xE3o param de escrever. Jos\xE9 do Patroc\xEDnio
+      nos jornais do Rio. Joaquim Nabuco, que leva a briga pro Parlamento. Andr\xE9
+      Rebou\xE7as, eles estao fazendo um um barulho grande."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_3.1
+    eventoId: 
+  - id: no_3.1
+    mostrarNoInicio: 0
+    perguntaTexto: Isso adianta alguma coisa?
+    respostaTexto: "Junta com o resto. Uns escrevem, outros fogem, outros processam,
+      outros escondem. Cada um puxa um peda\xE7o. Um dia a corda arrebenta."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_4
+    mostrarNoInicio: 0
+    perguntaTexto: Ouvi falar de um advogado sabe de algo? Luiz Gama
+    respostaTexto: "Esse morreu em 82. Mas deixou o caminho aberto hoje tem advogado
+      mo\xE7o fazendo a mesma coisa em S\xE3o Paulo inteira. N\xE3o morre uma ideia
+      dessas."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 

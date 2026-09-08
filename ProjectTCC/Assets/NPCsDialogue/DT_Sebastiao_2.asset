@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe8d2329ca146e42a5a9914070a68fd, type: 3}
+  m_Name: DT_Sebastiao_2
+  m_EditorClassIdentifier: 
+  npcName: 
+  audioEntrada: {fileID: 0}
+  nodes:
+  - id: no_1
+    mostrarNoInicio: 0
+    perguntaTexto: "O fazendeiro disse que \"tomaram os velhos\". O que \xE9 isso?"
+    respostaTexto: "Lei dos Sexagen\xE1rios, do ano passado, 1885. Libertou quem
+      passou dos sessenta."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_1.1
+    eventoId: 
+  - id: no_1.1
+    mostrarNoInicio: 0
+    perguntaTexto: "Ent\xE3o o senhor est\xE1 livre?"
+    respostaTexto: "Estou 'livre' e continuo aqui. A lei manda servir mais tr\xEAs
+      anos como indeniza\xE7\xE3o ao senhor. Chamam isso de liberdade."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_2
+    mostrarNoInicio: 0
+    perguntaTexto: Por que os abolicionistas criticaram essa lei?
+    respostaTexto: "Porque quase ningu\xE9m chega aos sessenta na lavoura, E quem
+      chega j\xE1 n\xE3o rende. Libertaram justamente quem eles n\xE3o queriam mais
+      sustentar."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_2.1
+    eventoId: 
+  - id: no_2.1
+    mostrarNoInicio: 0
+    perguntaTexto: E para onde vai um velho liberto?
+    respostaTexto: "Pra lugar nenhum. Sem terra, sem sal\xE1rio, sem os seus por
+      perto. Muitos voltam pra porta da fazenda pedir comida a quem os tinha."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_3
+    mostrarNoInicio: 0
+    perguntaTexto: "Seu Sebasti\xE3o, o senhor nasceu no Brasil?"
+    respostaTexto: "N\xE3o. Nasci do outro lado do mar. Cheguei menino, num navio
+      que veio \xE0 noite, numa praia sem porto nenhum. Nunca entendi por que foi
+      \xE0s escondidas."
+    respostaAudio: {fileID: 0}
+    substituirPor: no_3.1
+    eventoId: 
+  - id: no_3.1
+    mostrarNoInicio: 0
+    perguntaTexto: "Eu sei por qu\xEA. Por que era ilegal segundo a Lei Feij\xF3"
+    respostaTexto: "Maldi\xE7ao, Cinquenta anos. Cinquenta anos, mo\xE7o. Eu ja poderia
+      estar livre"
+    respostaAudio: {fileID: 0}
+    substituirPor: no_3.2
+    eventoId: 
+  - id: no_3.2
+    mostrarNoInicio: 0
+    perguntaTexto: Infelizmente essa lei era pra ingles ver, o pessoal nao respeita
+      muito.
+    respostaTexto: Droga, nem com as leis do nosso lado  a gente consegue sair
+    respostaAudio: {fileID: 0}
+    substituirPor: no_3.3
+    eventoId: 
+  - id: no_3.3
+    mostrarNoInicio: 0
+    perguntaTexto: "Atualemnte temos Lei Eus\xE9bio de Queir\xF3s, mas ela foi aprovada
+      depois que voce chegou, mas eu acho q conseguimos tentar algo"
+    respostaTexto: "\xC9 melhor do que nada, podemos ver como isso vai funcionar"
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_4
+    mostrarNoInicio: 0
+    perguntaTexto: "O senhor j\xE1 pensou em fugir?"
+    respostaTexto: "J\xE1 pensei, e j\xE1 vi gente conseguir. V\xE1 falar com o Z\xE9,
+      l\xE1 na carro\xE7a. Ele vive na vila, sabe das coisas que a gente aqui n\xE3o
+      sabe."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 

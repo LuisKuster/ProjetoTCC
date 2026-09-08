@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe8d2329ca146e42a5a9914070a68fd, type: 3}
+  m_Name: DT_Benedita_B
+  m_EditorClassIdentifier: 
+  npcName: 
+  audioEntrada: {fileID: 0}
+  nodes:
+  - id: no_1
+    mostrarNoInicio: 0
+    perguntaTexto: Encontrei algumas coisas, mas a lei tem um adendo
+    respostaTexto: "Sei bem qual \xE9, no papel o tome ta livre, mas na realdiade
+      a lei deu a escolha ao senhor: entregar a crian\xE7a ao governo aos 8 anos
+      e receber indeniza\xE7\xE3o, ou usar o trabalho dela at\xE9 os 21."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_2
+    mostrarNoInicio: 0
+    perguntaTexto: Sobre Voce
+    respostaTexto: "Eu sei Comigo a lei n\xE3o mexe, nasci antes. Mas a de 71 criou
+      um fundo de emancipa\xE7\xE3o e o direito de juntar pec\xFAlio. \xC9 pouco
+      e demora uma vida. Mas \xE9 porta que n\xE3o existia."
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_2
+    mostrarNoInicio: 0
+    perguntaTexto: E se o fazendeiro descobrir que a gente andou xeretando?
+    respostaTexto: Vai descobrir, um dia. Mas agora tem papel. E papel se leva ao
+      juiz.
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 

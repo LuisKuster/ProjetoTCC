@@ -17,7 +17,7 @@ MonoBehaviour:
   nodes:
   - id: no_1
     mostrarNoInicio: 0
-    perguntaTexto: "\tQuem \xE9 voc\xEA?"
+    perguntaTexto: "Quem \xE9 voc\xEA?"
     respostaTexto: "Luiz Gama. Nasci livre, em Salvador, em 1830. Minha m\xE3e, Lu\xEDsa
       Mahin, era africana e liberta."
     respostaAudio: {fileID: 0}
@@ -25,65 +25,44 @@ MonoBehaviour:
     eventoId: 
   - id: no_1.1
     mostrarNoInicio: 0
-    perguntaTexto: "E sua m\xE3e?"
-    respostaTexto: Ela lutou. Dizem que teve parte nas revoltas da Bahia. Um dia
-      partiu e eu nunca mais a encontrei.
+    perguntaTexto: Conta mais
+    respostaTexto: "Aos dez anos meu pr\xF3prio pai me vendeu como escravo, pra pagar
+      d\xEDvida de jogo. Vendeu o filho, nascido livre."
     respostaAudio: {fileID: 0}
     substituirPor: n_1.2
     eventoId: 
   - id: no_1.2
     mostrarNoInicio: 0
-    perguntaTexto: "Por que s\xF3 eu te escuto?"
-    respostaTexto: "Porque eu j\xE1 n\xE3o estou aqui. Morri em 1882, e estamos em
-      1886. O que voc\xEA v\xEA \xE9 o que ficou do que eu fiz. E ainda tem servi\xE7o."
+    perguntaTexto: E dpois?
+    respostaTexto: "Aprendi a ler aos dezessete, com um estudante de Direito. Foi
+      lendo que encontrei a prova de que eu era livre, e provei. Ler foi a \xFAnica
+      arma que me deixaram pegar."
     respostaAudio: {fileID: 0}
     substituirPor: 
     eventoId: 
   - id: no_2
     mostrarNoInicio: 0
-    perguntaTexto: "Como voc\xEA foi escravizado?"
-    respostaTexto: "Aos dez anos, meu pai perdeu no jogo e me vendeu. Vendeu o pr\xF3prio
-      filho, nascido livre. Fui parar em S\xE3o Paulo."
-    respostaAudio: {fileID: 0}
-    substituirPor: no_2.1
-    eventoId: 
-  - id: no_2.1
-    mostrarNoInicio: 0
-    perguntaTexto: Isso era legal?
-    respostaTexto: "Nunca foi. Mas o que \xE9 ilegal e o que acontece s\xE3o coisas
-      diferentes num pa\xEDs escravista."
+    perguntaTexto: 'E o que voce fazia? '
+    respostaTexto: "Eu era uma especie de advogado mas Nunca tive diploma. Chamam
+      gente como eu de r\xE1bula. Ainda assim tirei mais de quinhentas pessoas do
+      cativeiro, no papel e no grito."
     respostaAudio: {fileID: 0}
     substituirPor: 
     eventoId: 
   - id: no_3
     mostrarNoInicio: 0
     perguntaTexto: Como conseguiu a liberdade?
-    respostaTexto: "Aos dezessete anos aprendi a ler com um estudante de Direito.
-      Foi lendo que achei a prova de que eu era livre \u2014 e provei."
+    respostaTexto: Porque eu morri em 1882, e estamos em 1886. Na verdade nem eu
+      sei por que eu to aqui tambem, deve ter alguma ccoisa pendende que precisa
+      de mim
     respostaAudio: {fileID: 0}
     substituirPor: no_3.1
     eventoId: 
-  - id: no_3.1
-    mostrarNoInicio: 0
-    perguntaTexto: Ler mudou tanto assim?
-    respostaTexto: "Mudou tudo. A palavra escrita foi a \xFAnica arma que me deixaram
-      pegar."
-    respostaAudio: {fileID: 0}
-    substituirPor: 
-    eventoId: 
   - id: no_4
     mostrarNoInicio: 0
-    perguntaTexto: "Voc\xEA \xE9 advogado?"
-    respostaTexto: "N\xE3o tenho diploma. Chamam gente como eu de r\xE1bula. Ainda
-      assim, levei mais de quinhentas pessoas \xE0 liberdade nos tribunais."
-    respostaAudio: {fileID: 0}
-    substituirPor: no_4.1
-    eventoId: 
-  - id: no_4.1
-    mostrarNoInicio: 0
-    perguntaTexto: Como se ganha um caso desses?
-    respostaTexto: "Provando que a escraviza\xE7\xE3o foi ilegal. Suba ao escrit\xF3rio
-      e fale comigo l\xE1. \xC9 l\xE1 que os pap\xE9is mentem."
+    perguntaTexto: Voce tem alguma dica pra mim?
+    respostaTexto: "Bom fala com as pessoas essa \xE9 a melhor forma de conseguir
+      informa\xE7oes, procurar realtos e documentos sempre ajuda."
     respostaAudio: {fileID: 0}
     substituirPor: 
     eventoId: 
