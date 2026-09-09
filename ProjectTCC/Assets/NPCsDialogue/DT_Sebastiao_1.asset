@@ -16,7 +16,7 @@ MonoBehaviour:
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "H\xE1 quanto tempo o senhor est\xE1 aqui?"
     respostaTexto: Desde menino. Uns cinquenta anos neste cafezal. Perdi a conta
       dos anos e perdi o nome que me deram em casa.
@@ -24,7 +24,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_2
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "Como \xE9 o trabalho?"
     respostaTexto: "Do escuro ao escuro. Na colheita, mais. Quem n\xE3o enche o cesto,
       apanha. \xC9 simples assim."
@@ -41,7 +41,7 @@ MonoBehaviour:
     substituirPor: no_2.1
     eventoId: 
   - id: no_3
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "Quantos aqui chegam \xE0 sua idade?"
     respostaTexto: "Poucos. Muito poucos. A ro\xE7a come a gente bem antes disso.
       Eu sou o mais velho e sou uma exce\xE7\xE3o, n\xE3o uma regra."
@@ -49,10 +49,10 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_4
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: Posso ajudar?
-    respostaTexto: "Pode. Pega o cesto. Gr\xE3o maduro \xE9 o vermelho \u2014 o verde
-      estraga o lote e a culpa cai em mim."
+    respostaTexto: "Pode. Pega o cesto. Gr\xE3o maduro \xE9 o vermelho o verde estraga
+      o lote e a culpa cai em mim."
     respostaAudio: {fileID: 0}
     substituirPor: 
-    eventoId: 
+    eventoId: cafe_liberar

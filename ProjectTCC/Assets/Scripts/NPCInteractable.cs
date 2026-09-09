@@ -43,6 +43,9 @@ public class NPCInteractable : MonoBehaviour
     private Quaternion _rotacaoInicial;
     private float      _tempoDeSaida = -1f;
 
+    /// <summary>Qual árvore este NPC está usando agora. Só leitura.</summary>
+    public DialogueTree ArvoreAtual => dialogueTree;
+
     void Start()
     {
         var col = GetComponent<SphereCollider>();
@@ -118,6 +121,31 @@ public class NPCInteractable : MonoBehaviour
         SetHighlight(false);
         dialogueUI?.FecharTudo();
     }
+
+    // ---------------- Troca de árvore ----------------
+
+    /// <summary>
+    /// Troca a árvore de diálogo deste NPC. Arraste este método no UnityEvent
+    /// que marca a conclusão da missão (ex.: On Cesta Completa da CestaCafe)
+    /// e escolha o asset da árvore nova.
+    /// </summary>
+    public void TrocarDialogo(DialogueTree novaTree)
+    {
+        if (novaTree == null)
+        {
+            Debug.LogError($"[NPCInteractable] '{name}': TrocarDialogo recebeu null.", this);
+            return;
+        }
+
+        if (dialogueTree == novaTree) return;
+        dialogueTree = novaTree;
+
+        // Se o player já está no raio, o OnTriggerEnter não roda de novo —
+        // remonta na hora para ele não continuar vendo a árvore velha.
+        if (_playerNoRange) dialogueUI?.Setup(novaTree);
+    }
+
+    // ---------------- Giro / Highlight ----------------
 
     void GirarPara(Vector3 alvo)
     {
