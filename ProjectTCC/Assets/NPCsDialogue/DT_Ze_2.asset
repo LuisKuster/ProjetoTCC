@@ -16,7 +16,7 @@ MonoBehaviour:
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "Voc\xEA fica com alguma coisa do que ganha?"
     respostaTexto: "Se eu ganhar acima do combinado, o resto \xE9 meu pec\xFAlio.
       Guardo h\xE1 nove anos, numa caixa que tamb\xE9m n\xE3o \xE9 minha."
@@ -41,7 +41,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_2
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: O que se fala na vila?
     respostaTexto: Voce nao ouviu isso de mim mas tem gente sumindo das fazendas
       toda semana. E que tem gente na cidade escondendo quem some.
@@ -49,7 +49,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_3
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: O que se fala nos Jornais?
     respostaTexto: "Tem uns homens que n\xE3o param de escrever. Jos\xE9 do Patroc\xEDnio
       nos jornais do Rio. Joaquim Nabuco, que leva a briga pro Parlamento. Andr\xE9
@@ -66,7 +66,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_4
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: Ouvi falar de um advogado sabe de algo? Luiz Gama
     respostaTexto: "Esse morreu em 82. Mas deixou o caminho aberto hoje tem advogado
       mo\xE7o fazendo a mesma coisa em S\xE3o Paulo inteira. N\xE3o morre uma ideia

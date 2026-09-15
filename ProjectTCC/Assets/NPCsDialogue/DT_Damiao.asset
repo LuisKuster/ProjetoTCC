@@ -16,7 +16,7 @@ MonoBehaviour:
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "Opa quem \xE9 voce e por que ta aqui?"
     respostaTexto: "Eu nao vou te falar nada, \xE9 melhor voce sumir daqui"
     respostaAudio: {fileID: 0}
@@ -30,9 +30,23 @@ MonoBehaviour:
     substituirPor: no_1.1
     eventoId: 
   - id: no_2
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: 'Voce nao me parece estar aqui contra '
     respostaTexto: Opoha
     respostaAudio: {fileID: 0}
     substituirPor: no_1.1
     eventoId: 
+  - id: no_3
+    mostrarNoInicio: 1
+    perguntaTexto: 'Voce nao me parece estar aqui contra '
+    respostaTexto: Opoha
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: 
+  - id: no_4
+    mostrarNoInicio: 1
+    perguntaTexto: "vc \xE9 um bruxo?"
+    respostaTexto: Spawna magicamenteo o bagui
+    respostaAudio: {fileID: 0}
+    substituirPor: 
+    eventoId: saco_liberar

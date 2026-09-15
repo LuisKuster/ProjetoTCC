@@ -16,7 +16,7 @@ MonoBehaviour:
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "Voc\xEA \xE9 daqui da fazenda?"
     respostaTexto: "N\xE3o. Sou da vila. Meu senhor me aluga: eu trabalho na rua,
       no porto, na carro\xE7a, e entrego a ele o que ganho no fim do dia. Chamam
@@ -25,7 +25,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_2
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "Como \xE9 ser escravizado na cidade?"
     respostaTexto: "\xC9 outro peso. A gente anda solto, vende, carrega, conversa
       com todo mundo. Mas cada moeda tem dono, e o dono n\xE3o sou eu."
@@ -42,7 +42,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_3
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: Que trabalhos existem na vila?
     respostaTexto: "Tudo. Carregador, barbeiro, quitandeira, ferreiro, carpinteiro,
       sapateiro, costureira, ama de leite, cozinheira de casa grande. Muita gente
@@ -51,11 +51,11 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_4
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: Precisa de ajuda?
     respostaTexto: "Preciso. Os sacos est\xE3o no armaz\xE9m, atr\xE1s da tulha.
       Traz um de cada vez e dobra o joelho, sen\xE3o voc\xEA quebra as costas antes
       dos trinta."
     respostaAudio: {fileID: 0}
     substituirPor: 
-    eventoId: 
+    eventoId: fugitivo_aparecer

@@ -16,7 +16,7 @@ MonoBehaviour:
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "O fazendeiro disse que \"tomaram os velhos\". O que \xE9 isso?"
     respostaTexto: "Lei dos Sexagen\xE1rios, do ano passado, 1885. Libertou quem
       passou dos sessenta."
@@ -32,7 +32,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_2
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: Por que os abolicionistas criticaram essa lei?
     respostaTexto: "Porque quase ningu\xE9m chega aos sessenta na lavoura, E quem
       chega j\xE1 n\xE3o rende. Libertaram justamente quem eles n\xE3o queriam mais
@@ -49,7 +49,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_3
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "Seu Sebasti\xE3o, o senhor nasceu no Brasil?"
     respostaTexto: "N\xE3o. Nasci do outro lado do mar. Cheguei menino, num navio
       que veio \xE0 noite, numa praia sem porto nenhum. Nunca entendi por que foi
@@ -82,7 +82,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_4
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "O senhor j\xE1 pensou em fugir?"
     respostaTexto: "J\xE1 pensei, e j\xE1 vi gente conseguir. V\xE1 falar com o Z\xE9,
       l\xE1 na carro\xE7a. Ele vive na vila, sabe das coisas que a gente aqui n\xE3o
