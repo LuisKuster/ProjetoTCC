@@ -16,7 +16,7 @@ MonoBehaviour:
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: Beleza, voce sabe o que tem dentro do cofre?
     respostaTexto: "O que ele n\xE3o quer que ningu\xE9m leia. Todo fazendeiro guarda
       as mesmas tr\xEAs coisas: t\xEDtulo de terra, o livro onde ele anota as pessoas,
@@ -25,7 +25,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_2
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: Como eu abro o cofre?
     respostaTexto: "N\xE3o sou serralheiro. Mas ele \xE9 esperto, mas algo me diz
       que tem a veer com esses botoes que estao espalhados por ai."
@@ -33,7 +33,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_3
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: Por que papel importa tanto?
     respostaTexto: "Porque neste pa\xEDs a liberdade precisa de testemunha e de documento.
       Gente livre foi sequestrada e vendida. Liberto teve a carta rasgada e voltou
@@ -52,7 +52,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_4
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: Voce pare se familiarizar com esta casa, ja esteve aqui?
     respostaTexto: "Em cem iguais a esta. Sempre pela porta dos fundos, sempre com
       um processo debaixo do bra\xE7o, sempre saindo com algu\xE9m que entrou como
