@@ -12,15 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe8d2329ca146e42a5a9914070a68fd, type: 3}
   m_Name: DT_Sebastiao_1
   m_EditorClassIdentifier: 
-  npcName: Sebastiao
+  npcName: "Sebasti\xE3o"
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
     mostrarNoInicio: 1
+    perguntaTexto: "Ol\xE1, quem \xE9 o senhor?"
+    respostaTexto: "Meu nome \xE9 Sebasti\xE3o. Prazer."
+    respostaAudio: {fileID: 8300000, guid: fc9fd3e34bbaa2f45a27608b1c3b5737, type: 3}
+    substituirPor: no_1.1
+    eventoId: 
+  - id: no_1.1
+    mostrarNoInicio: 0
     perguntaTexto: "H\xE1 quanto tempo o senhor est\xE1 aqui?"
     respostaTexto: Desde menino. Uns cinquenta anos neste cafezal. Perdi a conta
       dos anos e perdi o nome que me deram em casa.
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 8e162e6a854b5574fb234309157eba54, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2
@@ -28,7 +35,7 @@ MonoBehaviour:
     perguntaTexto: "Como \xE9 o trabalho?"
     respostaTexto: "Do escuro ao escuro. Na colheita, mais. Quem n\xE3o enche o cesto,
       apanha. \xC9 simples assim."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 3d73ee553e2656444b98772b5923a410, type: 3}
     substituirPor: no_2.1
     eventoId: 
   - id: no_2.1
@@ -37,22 +44,23 @@ MonoBehaviour:
     respostaTexto: "Reclamar tem pre\xE7o. Mas tem quem trabalhe devagar de prop\xF3sito,
       quem quebre a ferramenta, quem amanhe\xE7a doente. Cada um resiste do jeito
       que d\xE1."
-    respostaAudio: {fileID: 0}
-    substituirPor: no_2.1
+    respostaAudio: {fileID: 8300000, guid: 625c3fd0a79b3f24db82f29cabd3b9fc, type: 3}
+    substituirPor: 
     eventoId: 
   - id: no_3
     mostrarNoInicio: 1
-    perguntaTexto: "Quantos aqui chegam \xE0 sua idade?"
+    perguntaTexto: "O senhor tem uma idade avan\xE7ada. Quantos aqui chegam \xE0
+      sua idade?"
     respostaTexto: "Poucos. Muito poucos. A ro\xE7a come a gente bem antes disso.
-      Eu sou o mais velho e sou uma exce\xE7\xE3o, n\xE3o uma regra."
-    respostaAudio: {fileID: 0}
+      Eu sou o mais velho, e sou uma exce\xE7\xE3o, n\xE3o uma regra."
+    respostaAudio: {fileID: 8300000, guid: 016285a7962f0094983bf71c0e61b068, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_4
     mostrarNoInicio: 1
-    perguntaTexto: Posso ajudar?
-    respostaTexto: "Pode. Pega o cesto. Gr\xE3o maduro \xE9 o vermelho o verde estraga
-      o lote e a culpa cai em mim."
-    respostaAudio: {fileID: 0}
+    perguntaTexto: "O senhor poderia me dar mais algumas informa\xE7\xF5es?"
+    respostaTexto: "Poderia, mas tenho que terminar meu servi\xE7o primeiro. Se quiser
+      ajudar, joga os gr\xE3os naquela cesta. Assim a gente proseia mais cedo."
+    respostaAudio: {fileID: 8300000, guid: 4831809b0318b5241a07d5fdfa21c7bc, type: 3}
     substituirPor: 
     eventoId: cafe_liberar

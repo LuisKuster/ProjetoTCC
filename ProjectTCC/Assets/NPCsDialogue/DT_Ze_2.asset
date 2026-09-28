@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe8d2329ca146e42a5a9914070a68fd, type: 3}
   m_Name: DT_Ze_2
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: "Z\xE9"
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
@@ -20,7 +20,7 @@ MonoBehaviour:
     perguntaTexto: "Voc\xEA fica com alguma coisa do que ganha?"
     respostaTexto: "Se eu ganhar acima do combinado, o resto \xE9 meu pec\xFAlio.
       Guardo h\xE1 nove anos, numa caixa que tamb\xE9m n\xE3o \xE9 minha."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: b54c445ed346089469a308c5b82e6cfd, type: 3}
     substituirPor: no_1.1
     eventoId: 
   - id: no_1.1
@@ -28,7 +28,7 @@ MonoBehaviour:
     perguntaTexto: "Pra qu\xEA?"
     respostaTexto: "Pra comprar minha carta de alforria. \xC9 caro. Muita gente morre
       juntando."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 40b8a6630004a4b488e8982075186cf2, type: 3}
     substituirPor: no_1.2
     eventoId: 
   - id: no_1.2
@@ -37,23 +37,32 @@ MonoBehaviour:
     respostaTexto: "A irmandade. A gente se cotiza, compra a liberdade de um por
       vez, e esse a\xED ajuda o pr\xF3ximo. \xC9 devagar, mas \xE9 nosso e ningu\xE9m
       nos deu."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 834fe695bbebb164d9be73104754a81a, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2
     mostrarNoInicio: 1
     perguntaTexto: O que se fala na vila?
-    respostaTexto: Voce nao ouviu isso de mim mas tem gente sumindo das fazendas
-      toda semana. E que tem gente na cidade escondendo quem some.
-    respostaAudio: {fileID: 0}
+    respostaTexto: "Que tem gente sumindo das fazendas toda semana. E que tem gente
+      na cidade escondendo quem some. N\xE3o ouviu de mim."
+    respostaAudio: {fileID: 8300000, guid: 5e32e7b1baf463248be2bac9be31978f, type: 3}
+    substituirPor: 
+    eventoId: 
+  - id: no_2.1
+    mostrarNoInicio: 0
+    perguntaTexto: "Voc\xEA j\xE1 ajudou algu\xE9m a sumir?"
+    respostaTexto: "Eu carrego caf\xE9. S\xF3 isso. Mas quem carrega caf\xE9 entra
+      e sai de fazenda o dia inteiro, e ningu\xE9m repara numa carro\xE7a."
+    respostaAudio: {fileID: 8300000, guid: e1367ee18f116a64d87e9d747be0a79b, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_3
     mostrarNoInicio: 1
     perguntaTexto: O que se fala nos Jornais?
     respostaTexto: "Tem uns homens que n\xE3o param de escrever. Jos\xE9 do Patroc\xEDnio
-      nos jornais do Rio. Joaquim Nabuco, que leva a briga pro Parlamento. Andr\xE9
-      Rebou\xE7as, eles estao fazendo um um barulho grande."
+      nos jornais do Rio, que n\xE3o deixa o assunto morrer. Joaquim Nabuco, que
+      leva a briga pro Parlamento. Andr\xE9 Rebou\xE7as, engenheiro, que diz que
+      n\xE3o basta libertar tem que dar terra."
     respostaAudio: {fileID: 0}
     substituirPor: no_3.1
     eventoId: 
@@ -62,7 +71,7 @@ MonoBehaviour:
     perguntaTexto: Isso adianta alguma coisa?
     respostaTexto: "Junta com o resto. Uns escrevem, outros fogem, outros processam,
       outros escondem. Cada um puxa um peda\xE7o. Um dia a corda arrebenta."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 58f049ef3b7595241b5328feb3679ce9, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_4
@@ -71,6 +80,6 @@ MonoBehaviour:
     respostaTexto: "Esse morreu em 82. Mas deixou o caminho aberto hoje tem advogado
       mo\xE7o fazendo a mesma coisa em S\xE3o Paulo inteira. N\xE3o morre uma ideia
       dessas."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: daf157fb8902cf54784432ee2e814200, type: 3}
     substituirPor: 
     eventoId: 

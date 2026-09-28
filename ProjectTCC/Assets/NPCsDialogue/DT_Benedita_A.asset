@@ -20,7 +20,7 @@ MonoBehaviour:
     perguntaTexto: "Quem \xE9 voce?"
     respostaTexto: "meu nome \xE9 benedita eu trabalho aqui a um bom tempo, voce
       deve ser novo por aqui."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 31aae8152c25843418e8138f4d58f056, type: 3}
     substituirPor: no_1.1
     eventoId: 
   - id: no_1.1
@@ -28,14 +28,14 @@ MonoBehaviour:
     perguntaTexto: "O que voc\xEA faz aqui? "
     respostaTexto: "Cozinho, lavo, engomo, sirvo e cuido das crian\xE7as da casa.
       Come\xE7o antes do sol e termino depois dele. "
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 2286342280e757248a471f71c86ecf3b, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_1.2
     mostrarNoInicio: 0
     perguntaTexto: "nossa quanto trabalho, e quando Voc\xEA descansa?  "
     respostaTexto: "Domingo de manh\xE3, se a casa deixar. E olhe l\xE1."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 3576b1ec73c1a864f890b3141a1a2270, type: 3}
     substituirPor: no_4.2
     eventoId: cha_iniciado
   - id: no_2
@@ -43,7 +43,7 @@ MonoBehaviour:
     perguntaTexto: "Voc\xEA mora nesta casa?"
     respostaTexto: "Durmo num cub\xEDculo atr\xE1s da cozinha. Estar perto dos senhores
       n\xE3o \xE9 privil\xE9gio \xE9 ter os olhos deles em cima o dia inteiro."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: f64d925528dcb3348a539c3043771815, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_3
@@ -51,7 +51,7 @@ MonoBehaviour:
     perguntaTexto: "Voc\xEA tem filhos?"
     respostaTexto: "Tenho um. O Tom\xE9. Ele nasceu livre  e o papel que prova isso
       est\xE1 trancado no cofre do escrit\xF3rio."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 8964523e826d77441acc8a30ca60fc20, type: 3}
     substituirPor: no_3.1
     eventoId: 
   - id: no_3.1
@@ -59,7 +59,7 @@ MonoBehaviour:
     perguntaTexto: Como assim, nasceu livre?
     respostaTexto: "Tem uma lei de 1871. Mas lei sem papel n\xE3o vale nada. Sem
       aquele papel, meu filho \xE9 escravo do jeito que ele quiser dizer que \xE9."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 77e9a23b76731524a90ac1e0dcb1edaa, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_3.2
@@ -67,7 +67,7 @@ MonoBehaviour:
     perguntaTexto: "Por que voc\xEA n\xE3o pega?  "
     respostaTexto: "Voce realmente acha que o patrao vai deixar? alem do mais o papel
       esta no cofre na sala dele, e ele quase nunca sai de l\xE1.\r\n"
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 193676d8a3c824f4597caf049b7bdbb1, type: 3}
     substituirPor: no_4.2
     eventoId: cha_iniciado
   - id: no_4
@@ -77,7 +77,7 @@ MonoBehaviour:
       pegar.
 
 '
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: cd32a6de6325fef4c9bdf8ce123b04da, type: 3}
     substituirPor: no_4.1
     eventoId: 
   - id: no_4.1
@@ -85,7 +85,7 @@ MonoBehaviour:
     perguntaTexto: "Tenho que achar um jeito de tirar ele do escrit\xF3rio, mas como? "
     respostaTexto: " a gente pode encehr ele de ch\xE1, alguma hora ele tenha que
       ir no baneiro."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 59d95422e42077641a49010194ecc392, type: 3}
     substituirPor: no_4.2
     eventoId: 
   - id: no_4.2
@@ -94,6 +94,6 @@ MonoBehaviour:
       voce."
     respostaTexto: "a chaleira est\xE1 no fogao, a xicara esta na sala de jantar,
       e o cha esta na dispensa, faz o cha e eu levo pra ele."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 45e166c1ef01c694ca5c7b170caf704a, type: 3}
     substituirPor: no_4.2
     eventoId: cha_iniciado

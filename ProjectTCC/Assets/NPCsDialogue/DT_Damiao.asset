@@ -12,41 +12,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe8d2329ca146e42a5a9914070a68fd, type: 3}
   m_Name: DT_Damiao
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: "Dami\xE3o"
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
     mostrarNoInicio: 1
-    perguntaTexto: "Opa quem \xE9 voce e por que ta aqui?"
-    respostaTexto: "Eu nao vou te falar nada, \xE9 melhor voce sumir daqui"
-    respostaAudio: {fileID: 0}
+    perguntaTexto: "Opa, quem \xE9 voc\xEA?"
+    respostaTexto: "N\xE3o grita. Me acharam, \xE9? Eu n\xE3o vou voltar."
+    respostaAudio: {fileID: 8300000, guid: edc219c3d22cf6649b63713afdd26efe, type: 3}
     substituirPor: no_1.1
     eventoId: 
   - id: no_1.1
     mostrarNoInicio: 0
-    perguntaTexto: Calma ai eu to aqui por ajudar
-    respostaTexto: Opoha
-    respostaAudio: {fileID: 0}
-    substituirPor: no_1.1
+    perguntaTexto: "Calma. Eu s\xF3 vim pegar um saco de caf\xE9."
+    respostaTexto: "Um saco de caf\xE9. E quem te mandou buscar? O carroceiro ou
+      o homem da casa?"
+    respostaAudio: {fileID: 8300000, guid: 4df12a85f9aecd149a17ca4798cd475f, type: 3}
+    substituirPor: no_1.2
+    eventoId: 
+  - id: no_1.2
+    mostrarNoInicio: 0
+    perguntaTexto: "O Z\xE9 me mandou."
+    respostaTexto: "O Z\xE9. Ent\xE3o tudo bem. Se o Z\xE9 te mandou, voc\xEA n\xE3o
+      \xE9 dos que apontam o dedo. Ele que me tirou daqui, faz um tempo."
+    respostaAudio: {fileID: 8300000, guid: 083a6e93aab733442848716b1f996c2f, type: 3}
+    substituirPor: 
     eventoId: 
   - id: no_2
     mostrarNoInicio: 1
-    perguntaTexto: 'Voce nao me parece estar aqui contra '
-    respostaTexto: Opoha
-    respostaAudio: {fileID: 0}
-    substituirPor: no_1.1
+    perguntaTexto: "Voc\xEA era daqui?"
+    respostaTexto: "Era. Fugi. N\xE3o fui o primeiro a fugir desta fazenda e n\xE3o
+      vou ser o \xFAltimo. Fugir \xE9 a coisa mais antiga que a gente faz."
+    respostaAudio: {fileID: 8300000, guid: ca5b521ba6134fe4499745f66c528ab3, type: 3}
+    substituirPor: no_2.1
     eventoId: 
+  - id: no_2.1
+    mostrarNoInicio: 0
+    perguntaTexto: "Por que voc\xEA fugiu?"
+    respostaTexto: "Porque dava. \xC9 o \xFAnico motivo que existe. Quem fica n\xE3o
+      fica por querer, fica por n\xE3o dar."
+    respostaAudio: {fileID: 8300000, guid: 48ac368b9419acd4dbce91445205a2f9, type: 3}
+    substituirPor: 
+    eventoId: saco_liberar
   - id: no_3
     mostrarNoInicio: 1
-    perguntaTexto: 'Voce nao me parece estar aqui contra '
-    respostaTexto: Opoha
-    respostaAudio: {fileID: 0}
-    substituirPor: 
+    perguntaTexto: "E por que voc\xEA voltou?"
+    respostaTexto: "Porque me ajudaram, e agora eu ajudo. Tem gente aqui dentro esperando
+      a vez, e algu\xE9m tem que vir dizer pra onde ir."
+    respostaAudio: {fileID: 8300000, guid: 9056a080cd224534c809d1f3990e53a9, type: 3}
+    substituirPor: no_3.1
+    eventoId: 
+  - id: no_3.1
+    mostrarNoInicio: 0
+    perguntaTexto: "E pra onde voc\xEAs v\xE3o?"
+    respostaTexto: "Santos. Tem um quilombo l\xE1, o Jabaquara. Dizem que \xE9 centenas
+      de gente livre, e que quem organiza \xE9 um homem chamado Quintino de Lacerda."
+    respostaAudio: {fileID: 8300000, guid: 0e056e39c844b1f47b468d262a25713b, type: 3}
+    substituirPor: no_3.2
+    eventoId: 
+  - id: no_3.2
+    mostrarNoInicio: 0
+    perguntaTexto: "O que \xE9 um quilombo?"
+    respostaTexto: "\xC9 onde quem fugiu constr\xF3i vida. Planta, vende, casa, se
+      defende. N\xE3o \xE9 buraco no mato, \xE9 gente vivendo. Existe desde que existe
+      escravid\xE3o neste pa\xEDs."
+    respostaAudio: {fileID: 8300000, guid: 2823d0fe08c84f047a21617396d4abaa, type: 3}
+    substituirPor: no_3.3
+    eventoId: 
+  - id: no_3.3
+    mostrarNoInicio: 0
+    perguntaTexto: "Voc\xEAs andam at\xE9 Santos sozinhos?"
+    respostaTexto: "Sozinho ningu\xE9m chega. Tem os caifazes gente da cidade que
+      esconde, transporta e avisa. Tem quem abra a porta de casa de madrugada e n\xE3o
+      pergunte nome. Abolicionista de verdade n\xE3o \xE9 s\xF3 quem escreve no jornal."
+    respostaAudio: {fileID: 8300000, guid: ae312cc76d0520e408d3764f95ef57b7, type: 3}
+    substituirPor: no_3.4
+    eventoId: 
+  - id: no_3.4
+    mostrarNoInicio: 0
+    perguntaTexto: "\xC9 perigoso demais."
+    respostaTexto: "\xC9. Mas nem todo mundo \xE9 salvo pela caneta. A maioria n\xE3o
+      tem advogado nem papel. O que sobra pra n\xF3s \xE9 a gente mesmo"
+    respostaAudio: {fileID: 8300000, guid: e1427f7f245a21a41ad3d845620118f4, type: 3}
+    substituirPor: no_3.5
+    eventoId: 
+  - id: no_3.5
+    mostrarNoInicio: 0
+    perguntaTexto: Nem todo mundo consegue correr.
+    respostaTexto: "E nem toda luta \xE9 correr. Tem quem quebre a ferramenta, quem
+      trabalhe devagar, quem amanhe\xE7a doente, quem reze escondido o que mandaram
+      esquecer, quem junte moeda nove anos pra comprar papel. Cada um faz o que d\xE1.
+      Eu escolhi a mais r\xE1pida ,e a mais burra."
+    respostaAudio: {fileID: 8300000, guid: 0a7d23d3fa99dfb40960c631c162beef, type: 3}
+    substituirPor: no_3.5
     eventoId: 
   - id: no_4
     mostrarNoInicio: 1
-    perguntaTexto: "vc \xE9 um bruxo?"
-    respostaTexto: Spawna magicamenteo o bagui
-    respostaAudio: {fileID: 0}
+    perguntaTexto: "N\xE3o quero te atrapalhar. Sabe me dizer onde est\xE3o os sacos
+      de caf\xE9?"
+    respostaTexto: "Est\xE3o ali do outro lado. E n\xE3o esquece: voc\xEA n\xE3o
+      me viu."
+    respostaAudio: {fileID: 8300000, guid: b0cb36d2f225c5245b27e5aff88fcbde, type: 3}
     substituirPor: 
     eventoId: saco_liberar

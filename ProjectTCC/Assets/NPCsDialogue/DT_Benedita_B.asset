@@ -16,28 +16,70 @@ MonoBehaviour:
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
+    mostrarNoInicio: 1
+    perguntaTexto: ola
+    respostaTexto: "Oi. Conseguiu encontrar alguma coisa na sala do patr\xE3o?"
+    respostaAudio: {fileID: 8300000, guid: 93a6a443219a74a4cbbaaf210b2ad554, type: 3}
+    substituirPor: no_1.1
+    eventoId: 
+  - id: no_1.1
     mostrarNoInicio: 0
-    perguntaTexto: Encontrei algumas coisas, mas a lei tem um adendo
-    respostaTexto: "Sei bem qual \xE9, no papel o tome ta livre, mas na realdiade
-      a lei deu a escolha ao senhor: entregar a crian\xE7a ao governo aos 8 anos
-      e receber indeniza\xE7\xE3o, ou usar o trabalho dela at\xE9 os 21."
+    perguntaTexto: "Sim. Encontrei os documentos que provam que o Tom\xE9 \xE9 livre."
+    respostaTexto: "Que boa not\xEDcia, mo\xE7o. A gente consegue tirar ele daqui,
+      ent\xE3o?"
     respostaAudio: {fileID: 0}
+    substituirPor: no_1.2
+    eventoId: 
+  - id: no_1.2
+    mostrarNoInicio: 0
+    perguntaTexto: "Mais ou menos. Pela lei, seu filho ainda tem que trabalhar aqui
+      at\xE9 os 21."
+    respostaTexto: "Por qu\xEA? Se ele nasceu livre, por que tem que ficar?"
+    respostaAudio: {fileID: 8300000, guid: 08aaebc27b3f75948b4c1ef359e5d509, type: 3}
+    substituirPor: no_1.3
+    eventoId: 
+  - id: no_1.3
+    mostrarNoInicio: 0
+    perguntaTexto: "A Lei do Ventre Livre deu a escolha ao senhor: quando a crian\xE7a
+      fizesse oito anos, ele podia entreg\xE1-la ao governo e receber uma indeniza\xE7\xE3o,
+      ou ficar com o trabalho dela at\xE9 os 21. "
+    respostaTexto: "Ent\xE3o eu valia menos que o dinheiro que eles ofereceram por
+      ele. Ele faz vinte e um em noventa e quatro. Eu vou ter cinquenta e tr\xEAs
+      anos."
+    respostaAudio: {fileID: 8300000, guid: 3bb5d055ae7bf414a8002f718ec09bb9, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2
+    mostrarNoInicio: 1
+    perguntaTexto: "E com rela\xE7\xE3o \xE0 senhora"
+    respostaTexto: "Nem precisa dizer. Eu j\xE1 sei que lei nenhuma foi feita pra
+      mim. A de 71 libertou o ventre, n\xE3o a mulher."
+    respostaAudio: {fileID: 8300000, guid: 6b31335655920f942a147c56099c9b16, type: 3}
+    substituirPor: no_2.1
+    eventoId: 
+  - id: no_2.1
     mostrarNoInicio: 0
-    perguntaTexto: Sobre Voce
-    respostaTexto: "Eu sei Comigo a lei n\xE3o mexe, nasci antes. Mas a de 71 criou
-      um fundo de emancipa\xE7\xE3o e o direito de juntar pec\xFAlio. \xC9 pouco
-      e demora uma vida. Mas \xE9 porta que n\xE3o existia."
-    respostaAudio: {fileID: 0}
+    perguntaTexto: "N\xE3o tem nada que a senhora possa fazer?"
+    respostaTexto: "Tem o pec\xFAlio. A lei deixou a gente juntar dinheiro pra comprar
+      a pr\xF3pria carta. Eu junto h\xE1 sete anos e n\xE3o cheguei na metade. Mas
+      \xE9 uma porta que antes n\xE3o existia."
+    respostaAudio: {fileID: 8300000, guid: 899464eb6bacd184ba85f4f00ef3d315, type: 3}
     substituirPor: 
     eventoId: 
-  - id: no_2
-    mostrarNoInicio: 0
-    perguntaTexto: E se o fazendeiro descobrir que a gente andou xeretando?
-    respostaTexto: Vai descobrir, um dia. Mas agora tem papel. E papel se leva ao
-      juiz.
-    respostaAudio: {fileID: 0}
+  - id: no_3
+    mostrarNoInicio: 1
+    perguntaTexto: O que a senhora pretende fazer daqui pra frente?
+    respostaTexto: "Continuar aqui, porque n\xE3o tem pra onde ir. Mas agora tem
+      papel. E papel se leva ao juiz. Enquanto o Tom\xE9 for menino, eu seguro; quando
+      ele crescer, ele leva."
+    respostaAudio: {fileID: 8300000, guid: d24e07dda632fc749bab27a75c83b897, type: 3}
+    substituirPor: 
+    eventoId: 
+  - id: no_4
+    mostrarNoInicio: 1
+    perguntaTexto: Muito obrigado pela sua ajuda.
+    respostaTexto: "Eu que agrade\xE7o. Voc\xEA me deu o papel e me explicou o que
+      estava escrito nele. Ningu\xE9m nunca tinha feito isso."
+    respostaAudio: {fileID: 8300000, guid: 4d6e53500d56249469c3956eeef17eda, type: 3}
     substituirPor: 
     eventoId: 
