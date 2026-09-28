@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34ad3c2bad8b10b4082c2dc68f79e6d2, type: 3}
-  m_Name: ExpositionPosCha
+  m_Name: ExpositionPosCofre
   m_EditorClassIdentifier: 
-  text: A npc foi entregar o cha, apos um tempo o dono da fazenda sai da sua sala
+  text: Gama discute baguis
+  voiceOver: {fileID: 0}
+  slides: []
+  image: {fileID: 0}
   holdDuration: 4
+  extraHold: 0.5
+  isEnding: 0
   onExpositionComplete:
     m_PersistentCalls:
       m_Calls: []
-  sceneToLoad: HouseFloor02
