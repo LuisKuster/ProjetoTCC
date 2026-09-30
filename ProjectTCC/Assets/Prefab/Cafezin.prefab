@@ -77,6 +77,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32d46b1cef8d2414380abfd53a1be6dc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2932575765520046391}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32d46b1cef8d2414380abfd53a1be6dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2818988712160493199}
   m_SourcePrefab: {fileID: 100100000, guid: 32d46b1cef8d2414380abfd53a1be6dc, type: 3}
 --- !u!1 &5679364541115810477 stripped
 GameObject:
@@ -178,7 +181,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2818988712160493199}
+        m_TargetAssemblyTypeName: Highlight, Assembly-CSharp
+        m_MethodName: Desligar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -260,3 +275,19 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &2818988712160493199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679364541115810477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc53080b3f1dd2948a1d0d8c7bfcb461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cor: {r: 1, g: 0.85, b: 0.3, a: 1}
+  intensidade: 1.5
+  pulsar: 1
+  velocidadePulso: 3
