@@ -16,53 +16,69 @@ MonoBehaviour:
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "Quem \xE9 voc\xEA?"
-    respostaTexto: "Luiz Gama. Nasci livre, em Salvador, em 1830. Minha m\xE3e, Lu\xEDsa
-      Mahin, era africana e liberta."
-    respostaAudio: {fileID: 0}
+    respostaTexto: "Ol\xE1, prazer em conhecer. Meu nome \xE9 Luiz Gama, sou filho
+      de Lu\xEDsa Mahin. Nasci em Salvador, em 1830."
+    respostaAudio: {fileID: 8300000, guid: afa6d119edecd99499f8cc27c4c34101, type: 3}
     substituirPor: no_1.1
     eventoId: 
   - id: no_1.1
     mostrarNoInicio: 0
-    perguntaTexto: Conta mais
-    respostaTexto: "Aos dez anos meu pr\xF3prio pai me vendeu como escravo, pra pagar
-      d\xEDvida de jogo. Vendeu o filho, nascido livre."
-    respostaAudio: {fileID: 0}
-    substituirPor: n_1.2
+    perguntaTexto: "Voc\xEA foi escravo?"
+    respostaTexto: "Fui. Mas n\xE3o deveria ter sido. Aos dez anos, meu pr\xF3prio
+      pai me vendeu para pagar uma d\xEDvida de jogo. Vendeu o pr\xF3prio filho,
+      que havia nascido livre."
+    respostaAudio: {fileID: 8300000, guid: 5eb8714b18a3c28448797e8b1689cfc1, type: 3}
+    substituirPor: no_1.2
     eventoId: 
   - id: no_1.2
     mostrarNoInicio: 0
-    perguntaTexto: E dpois?
-    respostaTexto: "Aprendi a ler aos dezessete, com um estudante de Direito. Foi
-      lendo que encontrei a prova de que eu era livre, e provei. Ler foi a \xFAnica
-      arma que me deixaram pegar."
+    perguntaTexto: "Como voc\xEA conseguiu sair?"
+    respostaTexto: "Aprendi a ler aos dezessete anos, com um estudante de Direito.
+      Foi lendo que descobri a prova de que eu era livre. Levei essa prova \xE0 Justi\xE7a
+      e o tribunal reconheceu minha liberdade. Ler foi a arma que me permitiram usar."
     respostaAudio: {fileID: 0}
     substituirPor: 
     eventoId: 
   - id: no_2
-    mostrarNoInicio: 0
-    perguntaTexto: 'E o que voce fazia? '
-    respostaTexto: "Eu era uma especie de advogado mas Nunca tive diploma. Chamam
-      gente como eu de r\xE1bula. Ainda assim tirei mais de quinhentas pessoas do
-      cativeiro, no papel e no grito."
-    respostaAudio: {fileID: 0}
+    mostrarNoInicio: 1
+    perguntaTexto: "Suas roupas me lembram um advogado, voc\xEA \xE9 um?"
+    respostaTexto: "Mais ou menos. Nunca tive diploma. Gente como eu era chamada
+      de r\xE1bula. Mesmo assim, ajudei a libertar mais de quinhentas pessoas pela
+      Justi\xE7a."
+    respostaAudio: {fileID: 8300000, guid: 5b762d1e1a4a9a14e83ff67a9db96ea8, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_3
-    mostrarNoInicio: 0
-    perguntaTexto: Como conseguiu a liberdade?
-    respostaTexto: Porque eu morri em 1882, e estamos em 1886. Na verdade nem eu
-      sei por que eu to aqui tambem, deve ter alguma ccoisa pendende que precisa
-      de mim
-    respostaAudio: {fileID: 0}
+    mostrarNoInicio: 1
+    perguntaTexto: "Parece que ningu\xE9m mais consegue te ver. Por qu\xEA?"
+    respostaTexto: "Porque, aparentemente, morri em 1882... e estamos em 1886. N\xE3o
+      fa\xE7a essa cara. Estou t\xE3o surpreso quanto voc\xEA."
+    respostaAudio: {fileID: 8300000, guid: 7c37fc59c30217843b6d9006fa0bea99, type: 3}
     substituirPor: no_3.1
     eventoId: 
-  - id: no_4
+  - id: no_3.1
     mostrarNoInicio: 0
-    perguntaTexto: Voce tem alguma dica pra mim?
-    respostaTexto: "Bom fala com as pessoas essa \xE9 a melhor forma de conseguir
-      informa\xE7oes, procurar realtos e documentos sempre ajuda."
-    respostaAudio: {fileID: 0}
+    perguntaTexto: "Talvez voc\xEA tenha algum assunto inacabado."
+    respostaTexto: "Talvez. Ent\xE3o vamos descobrir juntos."
+    respostaAudio: {fileID: 8300000, guid: 8dc17281a7bdf364c96460376e96c610, type: 3}
+    substituirPor: 
+    eventoId: 
+  - id: no_4
+    mostrarNoInicio: 1
+    perguntaTexto: Tem alguma dica para mim? Estou meio perdido.
+    respostaTexto: "Se est\xE1 procurando uma maneira de libertar algu\xE9m, procure
+      documentos. Qualquer papel que prove o que voc\xEA est\xE1 dizendo pode fazer
+      a diferen\xE7a."
+    respostaAudio: {fileID: 8300000, guid: a653bb60d497d634ea2888a8a558487b, type: 3}
+    substituirPor: no_4.1
+    eventoId: 
+  - id: no_4.1
+    mostrarNoInicio: 0
+    perguntaTexto: "Por onde eu come\xE7o?"
+    respostaTexto: "Procure algu\xE9m que trabalhe aqui e tenha motivos para querer
+      encontrar esses documentos."
+    respostaAudio: {fileID: 8300000, guid: b8683d9fb39115a4b8be54deb720b752, type: 3}
     substituirPor: 
     eventoId: 

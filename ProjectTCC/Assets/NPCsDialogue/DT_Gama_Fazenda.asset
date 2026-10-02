@@ -12,48 +12,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe8d2329ca146e42a5a9914070a68fd, type: 3}
   m_Name: DT_Gama_Fazenda
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Gama
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
-    mostrarNoInicio: 0
-    perguntaTexto: "Voce sempre agiu sozinho? Quem lutou junto com voc\xEA?"
-    respostaTexto: "Joaquim Nabuco, no Parlamento, Jos\xE9 do Patroc\xEDnio, nos
-      jornais e Andr\xE9 Rebou\xE7as, engenheiro, Cada um com a arma que tinha.\""
-    respostaAudio: {fileID: 0}
+    mostrarNoInicio: 1
+    perguntaTexto: "Me fala mais do seu tempo. Voc\xEA lutava sozinho?"
+    respostaTexto: "Nunca. Havia homens e mulheres lutando em todos os lados. Joaquim
+      Nabuco, no Parlamento, dizia que a escravid\xE3o corrompia n\xE3o s\xF3 quem
+      era escravizado, mas o pa\xEDs inteiro.\r\nJos\xE9 do Patroc\xEDnio fazia isso
+      nos jornais, sem deixar o assunto morrer. Andr\xE9 Rebou\xE7as, como engenheiro,
+      defendia que libertar sem dar condi\xE7\xF5es para viver livre era apenas metade
+      do caminho.\r\n"
+    respostaAudio: {fileID: 8300000, guid: 714ba8167ddb2aa41a522ff64037160e, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: As pessoas escravizadas resistiam?
-    respostaTexto: "Sempre. Fugindo, formando quilombo, indo \xE0 Justi\xE7a, quebrando
-      ferramenta, guardando sua f\xE9, trocando a folha do ch\xE1. Resistir era a
-      rotina, n\xE3o a exce\xE7\xE3o. Voc\xEA j\xE1 viu tr\xEAs hoje e nem percebeu."
-    respostaAudio: {fileID: 0}
+    respostaTexto: "Sempre. Fugiam, formavam quilombos, procuravam a Justi\xE7a,
+      quebravam ferramentas, mantinham sua f\xE9, trocavam mensagens e ajudavam uns
+      aos outros.\r\nResistir fazia parte da vida. N\xE3o era exce\xE7\xE3o."
+    respostaAudio: {fileID: 8300000, guid: 1fe6730aac6fead458a77ea843afc93c, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_3
-    mostrarNoInicio: 0
-    perguntaTexto: A alforria garante liberdade pra sempre?
-    respostaTexto: "As leis vieram atr\xE1s, nunca na frente. Cada uma foi arrancada,
-      n\xE3o presenteada."
-    respostaAudio: {fileID: 0}
-    substituirPor: 
+    mostrarNoInicio: 1
+    perguntaTexto: "Pelo menos est\xE3o criando leis. Isso \xE9 bom, n\xE3o?"
+    respostaTexto: "As leis vieram atr\xE1s. Quase nunca na frente. Cada avan\xE7o
+      foi conquistado, n\xE3o simplesmente presenteado."
+    respostaAudio: {fileID: 8300000, guid: 9266437379243794b9a6e3846cf59d32, type: 3}
+    substituirPor: no_3.1
     eventoId: 
   - id: no_3.1
     mostrarNoInicio: 0
     perguntaTexto: Como assim?
-    respostaTexto: "Quando voc\xEA ouvir algu\xE9m dizer que a escravid\xE3o acabou
-      porque algu\xE9m l\xE1 em cima teve bondade, lembre de quem voc\xEA conheceu
-      aqui. Nenhuma assinatura vem antes da briga que a obrigou."
-    respostaAudio: {fileID: 0}
+    respostaTexto: "Quando ouvir algu\xE9m dizer que a escravid\xE3o acabou porque
+      algu\xE9m, l\xE1 em cima, teve bondade, lembre-se das pessoas que conheceu
+      aqui."
+    respostaAudio: {fileID: 8300000, guid: f4f34dff717587045982c125abc027d3, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_4
     mostrarNoInicio: 0
-    perguntaTexto: Como isso vai terminar?
-    respostaTexto: "Vai acabar. N\xE3o sei o dia e n\xE3o vou estar l\xE1. Termine
-      o que veio fazer e volte aqui."
-    respostaAudio: {fileID: 0}
+    perguntaTexto: "Voc\xEA acha que isso um dia vai acabar?"
+    respostaTexto: "Tenho f\xE9 que sim.\r\nS\xF3 \xE9 uma pena que eu n\xE3o estarei
+      l\xE1 para ver.\r\nEnt\xE3o, se chegar o dia... fa\xE7a valer a pena ter lutado
+      por ele."
+    respostaAudio: {fileID: 8300000, guid: dc351d24296fc5a45a56d8b6a394d1e8, type: 3}
     substituirPor: 
     eventoId: 

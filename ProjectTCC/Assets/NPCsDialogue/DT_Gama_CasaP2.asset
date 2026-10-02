@@ -12,51 +12,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe8d2329ca146e42a5a9914070a68fd, type: 3}
   m_Name: DT_Gama_CasaP2
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Gama
   audioEntrada: {fileID: 0}
   nodes:
   - id: no_1
     mostrarNoInicio: 1
-    perguntaTexto: Beleza, voce sabe o que tem dentro do cofre?
-    respostaTexto: "O que ele n\xE3o quer que ningu\xE9m leia. Todo fazendeiro guarda
-      as mesmas tr\xEAs coisas: t\xEDtulo de terra, o livro onde ele anota as pessoas,
-      e alguma lei que tira o sono dele."
-    respostaAudio: {fileID: 0}
+    perguntaTexto: "Ali est\xE1 o cofre. O que ser\xE1 que ele guarda?"
+    respostaTexto: "Todo fazendeiro guarda as mesmas tr\xEAs coisas: o t\xEDtulo
+      da terra, o livro onde registra as pessoas que mant\xE9m sob seu poder e alguma
+      lei que tira o sono dele."
+    respostaAudio: {fileID: 8300000, guid: 4c8d1c5556d11be46950ff1f3c35cf85, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2
     mostrarNoInicio: 1
-    perguntaTexto: Como eu abro o cofre?
-    respostaTexto: "N\xE3o sou serralheiro. Mas ele \xE9 esperto, mas algo me diz
-      que tem a veer com esses botoes que estao espalhados por ai."
-    respostaAudio: {fileID: 0}
+    perguntaTexto: Tem alguma ideia de como abrir o cofre?
+    respostaTexto: "N\xE3o sou serralheiro. Mas ele parece um homem cuidadoso. Duvido
+      que tenha deixado uma senha \xE0 vista. Talvez os bot\xF5es espalhados pela
+      sala tenham alguma rela\xE7\xE3o com ele. Como aquele perto do rel\xF3gio."
+    respostaAudio: {fileID: 8300000, guid: a468b2fc7993485448da4981f7e9d790, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_3
     mostrarNoInicio: 1
-    perguntaTexto: Por que papel importa tanto?
-    respostaTexto: "Porque neste pa\xEDs a liberdade precisa de testemunha e de documento.
-      Gente livre foi sequestrada e vendida. Liberto teve a carta rasgada e voltou
-      pro cativeiro. Comigo fizeram isso."
-    respostaAudio: {fileID: 0}
+    perguntaTexto: "Por que esse papel \xE9 t\xE3o importante?"
+    respostaTexto: "Porque, neste pa\xEDs, a liberdade precisa de testemunha e de
+      documento. Pessoas livres foram sequestradas e vendidas. Libertos tiveram suas
+      cartas rasgadas e foram mandados de volta ao cativeiro. Fizeram isso comigo."
+    respostaAudio: {fileID: 8300000, guid: e82ac9a5f999b9444b06d5bbdac5e3c8, type: 3}
     substituirPor: no_3.1
     eventoId: 
   - id: no_3.1
     mostrarNoInicio: 0
-    perguntaTexto: E o que se faz?
-    respostaTexto: "Vai-se \xE0 Justi\xE7a. Chamam de a\xE7\xE3o de liberdade: a
-      pessoa entra no tribunal pedindo o reconhecimento da pr\xF3pria liberdade.
-      Precisava de um curador que assinasse por ela \u2014 era esse o meu of\xEDcio.
-      E muitas ganharam."
-    respostaAudio: {fileID: 0}
+    perguntaTexto: E depois? O que se faz?
+    respostaTexto: "Vai-se \xE0 Justi\xE7a. \xC9 uma a\xE7\xE3o de liberdade: a pessoa
+      entra no tribunal para exigir que sua condi\xE7\xE3o de livre seja reconhecida."
+    respostaAudio: {fileID: 8300000, guid: cc7aaace2a6428343a02b84e5d29bd92, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_4
     mostrarNoInicio: 1
-    perguntaTexto: Voce pare se familiarizar com esta casa, ja esteve aqui?
-    respostaTexto: "Em cem iguais a esta. Sempre pela porta dos fundos, sempre com
-      um processo debaixo do bra\xE7o, sempre saindo com algu\xE9m que entrou como
-      coisa."
-    respostaAudio: {fileID: 0}
+    perguntaTexto: "Voc\xEA parece conhecer muito bem esse tipo de lugar. J\xE1 esteve
+      aqui?"
+    respostaTexto: "Em cem lugares como este. Sempre pela porta dos fundos, sempre
+      com um processo debaixo do bra\xE7o... e, muitas vezes, saindo com algu\xE9m
+      que havia entrado tratado como coisa."
+    respostaAudio: {fileID: 8300000, guid: 6bb6ea070877fcd499ec0798e370c892, type: 3}
     substituirPor: 
     eventoId: 
