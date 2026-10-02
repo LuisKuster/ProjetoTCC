@@ -1,31 +1,43 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Toca cutscenes: fade in → áudio + slideshow sincronizado → troca de sala/teleporte → fade out.
+/// Um por cena. Quem dispara é o ExpositionTrigger.
+/// </summary>
 public class ExpositionManager : MonoBehaviour
 {
-    public static ExpositionManager Instance;
+    public static ExpositionManager Instance { get; private set; }
 
     [Header("Referências UI")]
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private TextMeshProUGUI textDisplay;
     [SerializeField] private Image imageDisplay;
 
+    [Tooltip("Opcional: só aparece quando o slide tem legenda.")]
+    [SerializeField] private TextMeshProUGUI textDisplay;
+
     [Header("Áudio")]
+    [Tooltip("Só a 'caixa de som'. NÃO coloque clip aqui: o áudio vem de cada cutscene.\nSe ficar vazio, é criado sozinho.")]
     [SerializeField] private AudioSource audioSource;
 
-    [Header("Configuração")]
+    [Header("Fades")]
     [SerializeField] private float fadeDuration = 1f;
 
-    [Tooltip("Fade curto ao trocar de slide. 0 = corte seco.")]
+    [Tooltip("Fade da imagem ao trocar de slide. 0 = corte seco.")]
     [SerializeField] private float slideFadeDuration = 0.25f;
 
     [Header("Reposicionamento")]
+    [Tooltip("Tag da RAIZ do rig do player (o objeto com CharacterController).")]
     [SerializeField] private string playerTag = "Player";
 
-    private bool isShowing = false;
-    private bool skip = false;
+    private bool isShowing;
+    private bool skip;
+
+    /// <summary>True enquanto uma cutscene está rodando (ou depois de um ending).</summary>
+    public bool IsShowing => isShowing;
 
     void Awake()
     {
@@ -39,131 +51,184 @@ public class ExpositionManager : MonoBehaviour
         canvasGroup.alpha = 0f;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
+        if (imageDisplay != null) imageDisplay.enabled = false;
+        if (textDisplay != null) textDisplay.enabled = false;
+
+        SetupAudio();
     }
 
-    public void TriggerExposition(ExpositionEventSO expositionEvent, GameObject roomToDisable, GameObject roomToEnable, Transform spawnPoint)
+    void OnDestroy()
     {
+        if (Instance == this) Instance = null;
+    }
+
+    private void SetupAudio()
+    {
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+        if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
+
+        // Narração: sempre 2D, pra tocar igual não importa onde o player está
+        audioSource.playOnAwake = false;
+        audioSource.loop = false;
+        audioSource.spatialBlend = 0f;
+    }
+
+    /// <summary>
+    /// Começa uma cutscene. Retorna false se já tinha outra rodando (e nada acontece).
+    /// </summary>
+    public bool TriggerExposition(ExpositionEventSO data, GameObject roomToDisable, GameObject roomToEnable,
+                                  Transform spawnPoint, Action onComplete = null)
+    {
+        if (data == null)
+        {
+            Debug.LogWarning("ExpositionManager: cutscene nula.");
+            return false;
+        }
         if (isShowing)
         {
-            Debug.LogWarning("ExpositionManager: já tem uma exposição rodando, ignorando chamada.");
-            return;
+            Debug.LogWarning($"ExpositionManager: já tem uma cutscene rodando, ignorando '{data.name}'.");
+            return false;
         }
-        StartCoroutine(ExpositionRoutine(expositionEvent, roomToDisable, roomToEnable, spawnPoint));
+
+        StartCoroutine(ExpositionRoutine(data, roomToDisable, roomToEnable, spawnPoint, onComplete));
+        return true;
     }
 
-    private IEnumerator ExpositionRoutine(ExpositionEventSO data, GameObject roomToDisable, GameObject roomToEnable, Transform spawnPoint)
+    /// <summary>Corta a cutscene atual (teste no editor / botão de pular).</summary>
+    [ContextMenu("Pular cutscene")]
+    public void SkipExposition() => skip = true;
+
+    // ---------------------------------------------------------------------
+
+    private IEnumerator ExpositionRoutine(ExpositionEventSO data, GameObject roomToDisable, GameObject roomToEnable,
+                                          Transform spawnPoint, Action onComplete)
     {
         isShowing = true;
         skip = false;
 
-        textDisplay.text = data.text;
-        bool temSlides = data.slides != null && data.slides.Length > 0;
-
         // Primeira imagem já entra junto com o fade da tela
-        if (imageDisplay != null)
-        {
-            Sprite primeira = temSlides ? data.slides[0].image : data.image;
-            imageDisplay.sprite = primeira;
-            imageDisplay.enabled = primeira != null;
-            SetImageAlpha(1f);
-        }
+        int slideAtual = 0;
+        ShowSlide(data, 0);
+        SetImageAlpha(1f);
 
         canvasGroup.blocksRaycasts = true;
+        yield return Lerp(fadeDuration, a => canvasGroup.alpha = a, 0f, 1f);
 
-        yield return Fade(0f, 1f);
-
-        // Áudio só depois do fade, pra narração não começar com a tela meio transparente
-        if (data.voiceOver != null && audioSource != null)
+        // Áudio começa com a tela já preta; o relógio dos slides começa junto
+        if (data.audio != null)
         {
-            audioSource.clip = data.voiceOver;
+            audioSource.clip = data.audio;
             audioSource.Play();
         }
-
-        if (temSlides)
-            yield return RodarSlides(data);
         else
-            yield return Esperar(TempoImagemUnica(data));
+        {
+            Debug.LogWarning($"ExpositionManager: '{data.name}' não tem áudio, usando {data.duracaoSemAudio}s.");
+        }
 
-        if (audioSource != null) audioSource.Stop();
+        float duracao = data.DuracaoConteudo;
+        float inicio = Time.time;
 
-        // Fim de jogo: tela fica preta, encerra aqui
+        while (!skip)
+        {
+            float t = Time.time - inicio;
+            if (t >= duracao) break;
+
+            int alvo = data.SlideNoTempo(t);
+            if (alvo != slideAtual)
+            {
+                slideAtual = alvo;
+                yield return ChangeSlide(data, alvo); // o relógio continua correndo durante o fade
+                continue;
+            }
+            yield return null;
+        }
+
+        yield return Wait(data.extraHold);
+        audioSource.Stop();
+
+        // Fim de jogo: tela fica preta e o manager fica travado de propósito
         if (data.isEnding)
         {
-            data.onExpositionComplete?.Invoke();
+            onComplete?.Invoke();
             yield break;
         }
 
+        // Troca de sala e teleporte com a tela preta
         if (roomToDisable != null) roomToDisable.SetActive(false);
-        if (roomToEnable != null)
-        {
-            roomToEnable.SetActive(true);
-            RepositionPlayer(spawnPoint);
-        }
+        if (roomToEnable != null) roomToEnable.SetActive(true);
+        RepositionPlayer(spawnPoint);
 
-        yield return Fade(1f, 0f);
+        yield return Lerp(fadeDuration, a => canvasGroup.alpha = a, 1f, 0f);
 
         if (imageDisplay != null) imageDisplay.enabled = false;
+        if (textDisplay != null) textDisplay.enabled = false;
         canvasGroup.blocksRaycasts = false;
         isShowing = false;
-        data.onExpositionComplete?.Invoke();
+        onComplete?.Invoke();
     }
 
-    private IEnumerator RodarSlides(ExpositionEventSO data)
+    private IEnumerator ChangeSlide(ExpositionEventSO data, int index)
     {
-        for (int i = 0; i < data.slides.Length; i++)
+        bool withFade = slideFadeDuration > 0f && imageDisplay != null;
+
+        if (withFade) yield return Lerp(slideFadeDuration, SetImageAlpha, 1f, 0f);
+        ShowSlide(data, index);
+        if (withFade) yield return Lerp(slideFadeDuration, SetImageAlpha, 0f, 1f);
+    }
+
+    private void ShowSlide(ExpositionEventSO data, int index)
+    {
+        Sprite sprite = null;
+        string legenda = null;
+
+        if (index >= 0 && index < data.SlideCount)
         {
-            var slide = data.slides[i];
-
-            // O slide 0 já foi montado antes do fade da tela
-            if (i > 0)
-            {
-                if (slideFadeDuration > 0f && imageDisplay != null)
-                    yield return FadeImagem(1f, 0f);
-
-                if (imageDisplay != null)
-                {
-                    imageDisplay.sprite = slide.image;
-                    imageDisplay.enabled = slide.image != null;
-                }
-
-                if (!string.IsNullOrEmpty(slide.text)) textDisplay.text = slide.text;
-
-                if (slideFadeDuration > 0f && imageDisplay != null)
-                    yield return FadeImagem(0f, 1f);
-            }
-            else if (!string.IsNullOrEmpty(slide.text))
-            {
-                textDisplay.text = slide.text;
-            }
-
-            yield return Esperar(slide.duration);
-            if (skip) yield break;
+            sprite = data.slides[index].imagem;
+            legenda = data.slides[index].legenda;
         }
 
-        yield return Esperar(data.extraHold);
+        if (imageDisplay != null)
+        {
+            imageDisplay.sprite = sprite;
+            imageDisplay.enabled = sprite != null;
+        }
+
+        if (textDisplay != null)
+        {
+            textDisplay.text = legenda;
+            textDisplay.enabled = !string.IsNullOrEmpty(legenda);
+        }
     }
 
-    private float TempoImagemUnica(ExpositionEventSO data)
-    {
-        float hold = data.holdDuration > 0f
-            ? data.holdDuration
-            : (data.voiceOver != null ? data.voiceOver.length : 0f);
-        return hold + data.extraHold;
-    }
-
-    private IEnumerator Esperar(float segundos)
+    private IEnumerator Wait(float seconds)
     {
         float t = 0f;
-        while (t < segundos && !skip)
+        while (t < seconds && !skip)
         {
             t += Time.deltaTime;
             yield return null;
         }
     }
 
-    /// <summary>Corta a exposição atual (teste no editor / botão de pular).</summary>
-    [ContextMenu("Pular exposição")]
-    public void SkipExposition() => skip = true;
+    /// <summary>Lerp genérico usado pelo fade da tela e pelo fade da imagem.</summary>
+    private IEnumerator Lerp(float duration, Action<float> set, float from, float to)
+    {
+        if (duration <= 0f)
+        {
+            set(to);
+            yield break;
+        }
+
+        float t = 0f;
+        set(from);
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            set(Mathf.Lerp(from, to, t / duration));
+            yield return null;
+        }
+        set(to);
+    }
 
     private void SetImageAlpha(float a)
     {
@@ -173,53 +238,23 @@ public class ExpositionManager : MonoBehaviour
         imageDisplay.color = c;
     }
 
-    private IEnumerator FadeImagem(float from, float to)
-    {
-        float t = 0f;
-        SetImageAlpha(from);
-        while (t < slideFadeDuration)
-        {
-            t += Time.deltaTime;
-            SetImageAlpha(Mathf.Lerp(from, to, t / slideFadeDuration));
-            yield return null;
-        }
-        SetImageAlpha(to);
-    }
-
     private void RepositionPlayer(Transform spawnPoint)
     {
-        if (spawnPoint == null)
-        {
-            Debug.LogWarning("ExpositionManager: spawnPoint não configurado.");
-            return;
-        }
+        if (spawnPoint == null) return; // sem spawn = player fica onde está
 
         var player = GameObject.FindWithTag(playerTag);
         if (player == null)
         {
-            Debug.LogWarning("ExpositionManager: nenhum Player encontrado.");
+            Debug.LogWarning($"ExpositionManager: nenhum objeto com a tag '{playerTag}' encontrado.");
             return;
         }
 
-        var characterController = player.GetComponent<CharacterController>();
-        if (characterController != null) characterController.enabled = false;
+        // CharacterController sobrescreve a posição se ficar ligado durante o teleporte
+        var cc = player.GetComponent<CharacterController>();
+        if (cc != null) cc.enabled = false;
 
-        player.transform.position = spawnPoint.position;
-        player.transform.rotation = spawnPoint.rotation;
+        player.transform.SetPositionAndRotation(spawnPoint.position, spawnPoint.rotation);
 
-        if (characterController != null) characterController.enabled = true;
-    }
-
-    private IEnumerator Fade(float from, float to)
-    {
-        float t = 0f;
-        canvasGroup.alpha = from;
-        while (t < fadeDuration)
-        {
-            t += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(from, to, t / fadeDuration);
-            yield return null;
-        }
-        canvasGroup.alpha = to;
+        if (cc != null) cc.enabled = true;
     }
 }
