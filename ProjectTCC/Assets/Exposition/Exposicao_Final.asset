@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ad3c2bad8b10b4082c2dc68f79e6d2, type: 3}
   m_Name: Exposicao_Final
   m_EditorClassIdentifier: 
-  text: The End! Continua.
-  holdDuration: 4
+  audio: {fileID: 0}
+  slides:
+  - imagem: {fileID: 0}
+    aparecerEm: 0
+    legenda: 
+  duracaoSemAudio: 8
+  extraHold: 0.5
   isEnding: 1
-  onExpositionComplete:
-    m_PersistentCalls:
-      m_Calls: []
