@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ad3c2bad8b10b4082c2dc68f79e6d2, type: 3}
   m_Name: ExpositionPosCofre
   m_EditorClassIdentifier: 
-  audio: {fileID: 8300000, guid: d40137fd08c3d3541953f424fbabf554, type: 3}
+  audio: {fileID: 8300000, guid: cc1feaeec5910f344bac0eefa3e31508, type: 3}
   slides: []
   duracaoSemAudio: 8
   extraHold: 0.5
