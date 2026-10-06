@@ -54,7 +54,7 @@ MonoBehaviour:
     substituirPor: 
     eventoId: 
   - id: no_4
-    mostrarNoInicio: 0
+    mostrarNoInicio: 1
     perguntaTexto: "Voc\xEA acha que isso um dia vai acabar?"
     respostaTexto: "Tenho f\xE9 que sim.\r\nS\xF3 \xE9 uma pena que eu n\xE3o estarei
       l\xE1 para ver.\r\nEnt\xE3o, se chegar o dia... fa\xE7a valer a pena ter lutado

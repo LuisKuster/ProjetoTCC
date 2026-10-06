@@ -57,6 +57,7 @@ public class ExpositionTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"ENTROU: {other.name} | tag: {other.tag} | raiz: {other.transform.root.tag}");
         if (modo != Modo.AoEntrarNoColisor) return;
         if (!EhPlayer(other)) return;
         Disparar();

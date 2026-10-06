@@ -146,17 +146,17 @@ public class ExpositionManager : MonoBehaviour
         yield return Wait(data.extraHold);
         audioSource.Stop();
 
+        // Troca de sala e teleporte com a tela preta (roda também no ending)
+        if (roomToDisable != null) roomToDisable.SetActive(false);
+        if (roomToEnable != null) roomToEnable.SetActive(true);
+        RepositionPlayer(spawnPoint);
+
         // Fim de jogo: tela fica preta e o manager fica travado de propósito
         if (data.isEnding)
         {
             onComplete?.Invoke();
             yield break;
         }
-
-        // Troca de sala e teleporte com a tela preta
-        if (roomToDisable != null) roomToDisable.SetActive(false);
-        if (roomToEnable != null) roomToEnable.SetActive(true);
-        RepositionPlayer(spawnPoint);
 
         yield return Lerp(fadeDuration, a => canvasGroup.alpha = a, 1f, 0f);
 

@@ -10,6 +10,10 @@ using UnityEngine.UI;
 ///
 /// Coloque este componente no NPC_Base — NÃO num dos canvas, porque ele
 /// precisa continuar ativo enquanto liga e desliga os dois.
+///
+/// O progresso (perguntas já feitas e botões substituídos) é guardado POR
+/// DialogueTree. Assim árvores diferentes com ids iguais ("no_1", "no_2"...)
+/// não se misturam.
 /// </summary>
 public class DialogueUI : MonoBehaviour
 {
@@ -33,7 +37,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private Text     headerLegado;
 
     [Header("Cores")]
-    [Tooltip("Cor do Outline quando a pergunta já foi feita.")]
+    [Tooltip("Cor de fundo do balão quando a pergunta já foi feita.")]
     [SerializeField] private Color corVisitada = new Color(0.45f, 0.45f, 0.45f);
 
     [Header("Áudio")]
@@ -50,19 +54,30 @@ public class DialogueUI : MonoBehaviour
     [Tooltip("Esconde o painel de resposta enquanto nenhuma pergunta foi feita.")]
     [SerializeField] private bool esconderRespostaVazia = true;
 
+    // ---------------- Estado ----------------
+
+    /// <summary>Progresso de uma árvore: o que já foi perguntado e qual nó está em cada botão.</summary>
+    private class EstadoArvore
+    {
+        public readonly HashSet<string> visitados = new HashSet<string>();
+        public int[] noDoBotao;
+        public bool  montado;
+    }
+
+    /// <summary>Um estado por DialogueTree. Não vive no ScriptableObject.</summary>
+    private readonly Dictionary<DialogueTree, EstadoArvore> _estados = new Dictionary<DialogueTree, EstadoArvore>();
+
     private DialogueTree _tree;
 
+    // Apontam para o estado da árvore atual.
     /// <summary>Qual nó está em cada botão agora. -1 = botão vazio.</summary>
-    private int[] _noDoBotao;
-
-    /// <summary>Progresso de runtime, por id de nó. Não vive no ScriptableObject.</summary>
-    private readonly HashSet<string> _visitados = new HashSet<string>();
+    private int[]           _noDoBotao;
+    private HashSet<string> _visitados = new HashSet<string>();
 
     private readonly Dictionary<string, int> _indicePorId = new Dictionary<string, int>();
 
     private float _ultimoClique = -999f;
     private bool  _inicializado;
-    private bool  _montado;
 
     void Awake() => Inicializar();
 
@@ -113,14 +128,14 @@ public class DialogueUI : MonoBehaviour
         bool arvoreNova = _tree != tree;
         _tree = tree;
 
-        if (arvoreNova) IndexarArvore();
-
-        // Só remonta na primeira vez ou se a árvore mudou. Assim os botões já
-        // substituídos continuam substituídos quando o player volta.
-        if (arvoreNova || !_montado)
+        if (arvoreNova)
         {
-            MontarBotoesIniciais();
-            _montado = true;
+            IndexarArvore();
+            CarregarEstado(tree);
+
+            // Tira o foco que ficou da árvore anterior.
+            foreach (var b in botoes)
+                if (b != null) b.LimparFoco();
         }
 
         if (questionBoxesRoot != null) questionBoxesRoot.SetActive(true);
@@ -150,6 +165,31 @@ public class DialogueUI : MonoBehaviour
     public void FecharResposta()
     {
         if (dialogueBoxRoot != null) dialogueBoxRoot.SetActive(false);
+    }
+
+    // ---------------- Estado por árvore ----------------
+
+    /// <summary>
+    /// Pega (ou cria) o estado da árvore e faz _visitados/_noDoBotao apontarem
+    /// para ele. Só monta os botões iniciais na primeira vez que a árvore abre;
+    /// se o player voltar, cinzas e substituições continuam como estavam.
+    /// </summary>
+    void CarregarEstado(DialogueTree tree)
+    {
+        if (!_estados.TryGetValue(tree, out EstadoArvore estado))
+        {
+            estado = new EstadoArvore { noDoBotao = new int[botoes.Length] };
+            _estados[tree] = estado;
+        }
+
+        _visitados = estado.visitados;
+        _noDoBotao = estado.noDoBotao;
+
+        if (!estado.montado)
+        {
+            MontarBotoesIniciais();
+            estado.montado = true;
+        }
     }
 
     // ---------------- Montagem ----------------
@@ -280,12 +320,25 @@ public class DialogueUI : MonoBehaviour
 
     // ---------------- API ----------------
 
+    /// <summary>Zera só a árvore que está aberta agora.</summary>
     public void ReiniciarProgresso()
     {
-        _visitados.Clear();
         if (_tree == null) return;
 
+        _visitados.Clear();
         MontarBotoesIniciais();
+        for (int i = 0; i < botoes.Length; i++) AplicarBotao(i);
+    }
+
+    /// <summary>Zera o progresso de todas as árvores (ex.: reiniciar a partida).</summary>
+    public void ReiniciarTudo()
+    {
+        _estados.Clear();
+
+        if (_tree == null) return;
+
+        DialogueTree atual = _tree;
+        CarregarEstado(atual);
         for (int i = 0; i < botoes.Length; i++) AplicarBotao(i);
     }
 }

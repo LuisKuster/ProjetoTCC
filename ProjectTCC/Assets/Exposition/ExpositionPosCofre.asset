@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ad3c2bad8b10b4082c2dc68f79e6d2, type: 3}
   m_Name: ExpositionPosCofre
   m_EditorClassIdentifier: 
-  audio: {fileID: 8300000, guid: cc1feaeec5910f344bac0eefa3e31508, type: 3}
+  audio: {fileID: 8300000, guid: a6e00cdc0f0136c40bfc08c8512f035a, type: 3}
   slides:
   - imagem: {fileID: 0}
     aparecerEm: 0
-    legenda: Gama ta falando menor cala a boca ai
+    legenda: 
   duracaoSemAudio: 8
   extraHold: 0.5
   isEnding: 0

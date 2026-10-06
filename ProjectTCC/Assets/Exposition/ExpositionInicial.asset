@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: ExpositionInicial
   m_EditorClassIdentifier: 
   audio: {fileID: 0}
-  slides:
-  - imagem: {fileID: 21300000, guid: 5ad92ee340552d34b99cfeeae5355f65, type: 3}
-    aparecerEm: 0
-    legenda: Teste01
-  - imagem: {fileID: 21300000, guid: c4d8b8565bef1451b94058ebfcab985d, type: 3}
-    aparecerEm: 4
-    legenda: teste02
+  slides: []
   duracaoSemAudio: 3
   extraHold: 0.5
   isEnding: 0

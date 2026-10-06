@@ -4,12 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Um botão de pergunta da UI nova (sample do XRI).
-/// Coloque em cada "Text Button" (o objeto que tem o componente Button).
-///
-/// O hover NÃO é tratado aqui: o próprio Button já faz isso pelo
-/// Highlighted Color das Transitions. O que este script controla é só a
-/// cor de "já visitado", aplicada no Outline.
+/// Um botão de pergunta. Coloque no "Text Button" (o objeto que tem o Button).
+/// A cor de fundo (o azul) é controlada pelo ColorBlock do Button.
+/// Quando a pergunta já foi feita, troca a Normal/Selected Color pela cor de visitado;
+/// Highlighted e Pressed continuam as originais, então o hover segue funcionando.
 /// </summary>
 public class DialogueOptionButton : MonoBehaviour
 {
@@ -20,40 +18,38 @@ public class DialogueOptionButton : MonoBehaviour
     [SerializeField] private TMP_Text labelTMP;
     [SerializeField] private Text     labelLegado;
 
-    [Tooltip("O Outline dentro do Image. É ele que muda de cor quando a pergunta já foi feita.")]
-    [SerializeField] private Image outline;
-
     public event Action<int> AoClicar;
 
-    private int   _indice = -1;
-    private Color _corOutlineOriginal;
-    private bool  _preparado;
+    private int         _indice = -1;
+    private ColorBlock  _coresOriginais;
+    private bool        _preparado;
 
     public void Init(int indice)
     {
         _indice = indice;
+        if (_preparado) return;
+        _preparado = true;
 
-        if (!_preparado)
+        if (button == null) button = GetComponent<Button>();
+        if (button == null)
         {
-            _preparado = true;
-
-            if (button == null) button = GetComponent<Button>();
-            if (button == null)
-            {
-                Debug.LogError($"[DialogueOptionButton] '{name}' não tem Button.", this);
-                return;
-            }
-
-            if (labelTMP == null && labelLegado == null)
-            {
-                labelTMP    = GetComponentInChildren<TMP_Text>(true);
-                if (labelTMP == null) labelLegado = GetComponentInChildren<Text>(true);
-            }
-
-            if (outline != null) _corOutlineOriginal = outline.color;
-
-            button.onClick.AddListener(() => AoClicar?.Invoke(_indice));
+            Debug.LogError($"[DialogueOptionButton] '{name}' não tem Button.", this);
+            return;
         }
+
+        if (labelTMP == null && labelLegado == null)
+        {
+            labelTMP = GetComponentInChildren<TMP_Text>(true);
+            if (labelTMP == null) labelLegado = GetComponentInChildren<Text>(true);
+        }
+
+        _coresOriginais = button.colors;
+
+        if (button.transition != Selectable.Transition.ColorTint)
+            Debug.LogWarning($"[DialogueOptionButton] '{name}': a Transition do Button não é Color Tint, " +
+                             "a cor de visitado não vai aparecer.", this);
+
+        button.onClick.AddListener(() => AoClicar?.Invoke(_indice));
     }
 
     void OnDestroy()
@@ -69,8 +65,15 @@ public class DialogueOptionButton : MonoBehaviour
 
     public void DefinirVisitada(bool visitada, Color corVisitada)
     {
-        if (outline == null) return;
-        outline.color = visitada ? corVisitada : _corOutlineOriginal;
+        if (button == null) return;
+
+        ColorBlock cores = _coresOriginais;
+        if (visitada)
+        {
+            cores.normalColor   = corVisitada;
+            cores.selectedColor = corVisitada; // depois do clique o botão fica "Selected"
+        }
+        button.colors = cores; // a Unity já reaplica a cor na hora
     }
 
     public void DefinirVisivel(bool visivel)
