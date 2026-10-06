@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ad3c2bad8b10b4082c2dc68f79e6d2, type: 3}
   m_Name: ExpositionInicial
   m_EditorClassIdentifier: 
-  audio: {fileID: 8300000, guid: d40137fd08c3d3541953f424fbabf554, type: 3}
+  audio: {fileID: 0}
   slides:
   - imagem: {fileID: 21300000, guid: 5ad92ee340552d34b99cfeeae5355f65, type: 3}
     aparecerEm: 0
@@ -20,6 +20,6 @@ MonoBehaviour:
   - imagem: {fileID: 21300000, guid: c4d8b8565bef1451b94058ebfcab985d, type: 3}
     aparecerEm: 4
     legenda: teste02
-  duracaoSemAudio: 8
+  duracaoSemAudio: 3
   extraHold: 0.5
   isEnding: 0

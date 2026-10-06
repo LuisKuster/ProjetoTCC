@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: ExpositionPosCofre
   m_EditorClassIdentifier: 
   audio: {fileID: 8300000, guid: cc1feaeec5910f344bac0eefa3e31508, type: 3}
-  slides: []
+  slides:
+  - imagem: {fileID: 0}
+    aparecerEm: 0
+    legenda: Gama ta falando menor cala a boca ai
   duracaoSemAudio: 8
   extraHold: 0.5
   isEnding: 0

@@ -12,16 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ad3c2bad8b10b4082c2dc68f79e6d2, type: 3}
   m_Name: ExpositionPosCha
   m_EditorClassIdentifier: 
-  text: A npc foi entregar o cha, apos um tempo o dono da fazenda sai da sua sala
-  voiceOver: {fileID: 0}
+  audio: {fileID: 0}
   slides:
-  - image: {fileID: 0}
-    text: 
-    duration: 0
-  image: {fileID: 0}
-  holdDuration: 4
+  - imagem: {fileID: 0}
+    aparecerEm: 0
+    legenda: Benedita leva o cha, e voce espera ele sair da sala
+  duracaoSemAudio: 3
   extraHold: 0.5
   isEnding: 0
-  onExpositionComplete:
-    m_PersistentCalls:
-      m_Calls: []
