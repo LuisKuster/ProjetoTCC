@@ -59,4 +59,4 @@ MonoBehaviour:
       que havia entrado tratado como coisa."
     respostaAudio: {fileID: 8300000, guid: 6bb6ea070877fcd499ec0798e370c892, type: 3}
     substituirPor: 
-    eventoId: 
+    eventoId: Iniciar_Pergaminhos
