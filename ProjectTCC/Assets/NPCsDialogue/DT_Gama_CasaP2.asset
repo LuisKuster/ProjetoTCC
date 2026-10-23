@@ -17,20 +17,18 @@ MonoBehaviour:
   nodes:
   - id: no_1
     mostrarNoInicio: 1
-    perguntaTexto: "Ali est\xE1 o cofre. O que ser\xE1 que ele guarda?"
-    respostaTexto: "Todo fazendeiro guarda as mesmas tr\xEAs coisas: o t\xEDtulo
-      da terra, o livro onde registra as pessoas que mant\xE9m sob seu poder e alguma
-      lei que tira o sono dele."
-    respostaAudio: {fileID: 8300000, guid: 4c8d1c5556d11be46950ff1f3c35cf85, type: 3}
+    perguntaTexto: O que eu deveria fazer agora?
+    respostaTexto: Procura documentos, qualquer coisa que ajude a gente, eu vou ir
+      pro curando por aqui tambem.
+    respostaAudio: {fileID: 0}
     substituirPor: 
-    eventoId: 
+    eventoId: Iniciar_Pergaminhos
   - id: no_2
     mostrarNoInicio: 1
     perguntaTexto: Tem alguma ideia de como abrir o cofre?
     respostaTexto: "N\xE3o sou serralheiro. Mas ele parece um homem cuidadoso. Duvido
-      que tenha deixado uma senha \xE0 vista. Talvez os bot\xF5es espalhados pela
-      sala tenham alguma rela\xE7\xE3o com ele. Como aquele perto do rel\xF3gio."
-    respostaAudio: {fileID: 8300000, guid: a468b2fc7993485448da4981f7e9d790, type: 3}
+      que tenha deixado uma senha \xE0 vista. Talvez algum botao escondido."
+    respostaAudio: {fileID: 0}
     substituirPor: 
     eventoId: 
   - id: no_3
@@ -59,4 +57,4 @@ MonoBehaviour:
       que havia entrado tratado como coisa."
     respostaAudio: {fileID: 8300000, guid: 6bb6ea070877fcd499ec0798e370c892, type: 3}
     substituirPor: 
-    eventoId: Iniciar_Pergaminhos
+    eventoId: 

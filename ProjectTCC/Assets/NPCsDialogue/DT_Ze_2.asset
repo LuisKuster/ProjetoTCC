@@ -76,10 +76,8 @@ MonoBehaviour:
     eventoId: 
   - id: no_4
     mostrarNoInicio: 1
-    perguntaTexto: Ouvi falar de um advogado sabe de algo? Luiz Gama
-    respostaTexto: "Esse morreu em 82. Mas deixou o caminho aberto hoje tem advogado
-      mo\xE7o fazendo a mesma coisa em S\xE3o Paulo inteira. N\xE3o morre uma ideia
-      dessas."
+    perguntaTexto: Ja tenho tudo que eu preciso, poderia me dar uma carona?
+    respostaTexto: Claro,  sobe ai, eu te deixo na cidade.
     respostaAudio: {fileID: 8300000, guid: daf157fb8902cf54784432ee2e814200, type: 3}
     substituirPor: 
     eventoId: Final

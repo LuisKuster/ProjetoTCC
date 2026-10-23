@@ -92,8 +92,7 @@ MonoBehaviour:
     mostrarNoInicio: 0
     perguntaTexto: "otima idea, aonde estao os ingredientes? eu fa\xE7o e trago para
       voce."
-    respostaTexto: "a chaleira est\xE1 no fogao, a xicara esta na sala de jantar,
-      e o cha esta na dispensa, faz o cha e eu levo pra ele."
-    respostaAudio: {fileID: 8300000, guid: 45e166c1ef01c694ca5c7b170caf704a, type: 3}
+    respostaTexto: Pega o cha ali na dispensa, que eu preparo.
+    respostaAudio: {fileID: 0}
     substituirPor: no_4.2
     eventoId: cha_iniciado
