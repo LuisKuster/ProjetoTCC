@@ -19,4 +19,4 @@ MonoBehaviour:
     legenda: Final menor
   duracaoSemAudio: 8
   extraHold: 0.5
-  isEnding: 0
+  isEnding: 1

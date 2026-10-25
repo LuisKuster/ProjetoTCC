@@ -16,7 +16,8 @@ MonoBehaviour:
   slides:
   - imagem: {fileID: 0}
     aparecerEm: 0
-    legenda: 
-  duracaoSemAudio: 8
+    legenda: Com todos os documentos descobertos, voce parte para o lado de fora
+      da fazenda
+  duracaoSemAudio: 3
   extraHold: 0.5
   isEnding: 0

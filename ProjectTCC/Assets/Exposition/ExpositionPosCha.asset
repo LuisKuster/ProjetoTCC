@@ -16,7 +16,10 @@ MonoBehaviour:
   slides:
   - imagem: {fileID: 0}
     aparecerEm: 0
-    legenda: Benedita leva o cha, e voce espera ele sair da sala
-  duracaoSemAudio: 3
+    legenda: "Benedita prepara o ch\xE1 e leva para o fazendeiro"
+  - imagem: {fileID: 0}
+    aparecerEm: 3
+    legenda: Enquanto isso voce espera ele sair da sala para poder investigar
+  duracaoSemAudio: 6
   extraHold: 0.5
   isEnding: 0
