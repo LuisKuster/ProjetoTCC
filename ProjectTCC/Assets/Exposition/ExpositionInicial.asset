@@ -12,8 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ad3c2bad8b10b4082c2dc68f79e6d2, type: 3}
   m_Name: ExpositionInicial
   m_EditorClassIdentifier: 
-  audio: {fileID: 0}
-  slides: []
+  audio: {fileID: 8300000, guid: d40137fd08c3d3541953f424fbabf554, type: 3}
+  slides:
+  - imagem: {fileID: 21300000, guid: 5362b09d9ce25a24db53a9fef3f05f43, type: 3}
+    aparecerEm: 0
+    legenda: 
+  - imagem: {fileID: 21300000, guid: eed4b0eadd067cc4e909ce54e63693cd, type: 3}
+    aparecerEm: 15
+    legenda: 
+  - imagem: {fileID: 21300000, guid: 0ce781971a9a3f8499ac474006ccdcc6, type: 3}
+    aparecerEm: 21
+    legenda: 
+  - imagem: {fileID: 21300000, guid: eed4b0eadd067cc4e909ce54e63693cd, type: 3}
+    aparecerEm: 40
+    legenda: 
+  - imagem: {fileID: 21300000, guid: bfaf34bf140030b45b01df3564978dbe, type: 3}
+    aparecerEm: 50
+    legenda: 
   duracaoSemAudio: 3
   extraHold: 0.5
   isEnding: 0
