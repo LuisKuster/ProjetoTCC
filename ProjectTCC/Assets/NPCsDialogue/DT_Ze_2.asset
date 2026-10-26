@@ -20,7 +20,7 @@ MonoBehaviour:
     perguntaTexto: "Voc\xEA fica com alguma coisa do que ganha?"
     respostaTexto: "Se eu ganhar acima do combinado, o resto \xE9 meu pec\xFAlio.
       Guardo h\xE1 nove anos, numa caixa que tamb\xE9m n\xE3o \xE9 minha."
-    respostaAudio: {fileID: 8300000, guid: b54c445ed346089469a308c5b82e6cfd, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 3e9e5ef0c98a4764f89addb45ff3e0f3, type: 3}
     substituirPor: no_1.1
     eventoId: 
   - id: no_1.1
@@ -28,7 +28,7 @@ MonoBehaviour:
     perguntaTexto: "Pra qu\xEA?"
     respostaTexto: "Pra comprar minha carta de alforria. \xC9 caro. Muita gente morre
       juntando."
-    respostaAudio: {fileID: 8300000, guid: 40b8a6630004a4b488e8982075186cf2, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 23bfd7669fe18754f9871e2eb25382ad, type: 3}
     substituirPor: no_1.2
     eventoId: 
   - id: no_1.2
@@ -37,7 +37,7 @@ MonoBehaviour:
     respostaTexto: "A irmandade. A gente se cotiza, compra a liberdade de um por
       vez, e esse a\xED ajuda o pr\xF3ximo. \xC9 devagar, mas \xE9 nosso e ningu\xE9m
       nos deu."
-    respostaAudio: {fileID: 8300000, guid: 834fe695bbebb164d9be73104754a81a, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 528cd24be8ef6794084eb201371b115a, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2
@@ -45,7 +45,7 @@ MonoBehaviour:
     perguntaTexto: O que se fala na vila?
     respostaTexto: "Que tem gente sumindo das fazendas toda semana. E que tem gente
       na cidade escondendo quem some. N\xE3o ouviu de mim."
-    respostaAudio: {fileID: 8300000, guid: 5e32e7b1baf463248be2bac9be31978f, type: 3}
+    respostaAudio: {fileID: 8300000, guid: f220ab7fdf4244642898ad4a9c001781, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2.1
@@ -53,7 +53,7 @@ MonoBehaviour:
     perguntaTexto: "Voc\xEA j\xE1 ajudou algu\xE9m a sumir?"
     respostaTexto: "Eu carrego caf\xE9. S\xF3 isso. Mas quem carrega caf\xE9 entra
       e sai de fazenda o dia inteiro, e ningu\xE9m repara numa carro\xE7a."
-    respostaAudio: {fileID: 8300000, guid: e1367ee18f116a64d87e9d747be0a79b, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 0c8bfb5e6de12e9448a0278221b824ee, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_3
@@ -63,7 +63,7 @@ MonoBehaviour:
       nos jornais do Rio, que n\xE3o deixa o assunto morrer. Joaquim Nabuco, que
       leva a briga pro Parlamento. Andr\xE9 Rebou\xE7as, engenheiro, que diz que
       n\xE3o basta libertar tem que dar terra."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: a55e7ddbc07b5c447b071b7b71d6acb4, type: 3}
     substituirPor: no_3.1
     eventoId: 
   - id: no_3.1
@@ -71,7 +71,7 @@ MonoBehaviour:
     perguntaTexto: Isso adianta alguma coisa?
     respostaTexto: "Junta com o resto. Uns escrevem, outros fogem, outros processam,
       outros escondem. Cada um puxa um peda\xE7o. Um dia a corda arrebenta."
-    respostaAudio: {fileID: 8300000, guid: 58f049ef3b7595241b5328feb3679ce9, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 35b32027d8eeb744f95e9f7d32eac08a, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_4

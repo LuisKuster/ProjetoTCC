@@ -21,7 +21,7 @@ MonoBehaviour:
     respostaTexto: "N\xE3o. Sou da vila. Meu senhor me aluga: eu trabalho na rua,
       no porto, na carro\xE7a, e entrego a ele o que ganho no fim do dia. Chamam
       isso de escravo de ganho."
-    respostaAudio: {fileID: 8300000, guid: 65266b62b93951847b68745857e79779, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 22149ce94c1e75f419137d3391db0c0d, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2
@@ -29,7 +29,7 @@ MonoBehaviour:
     perguntaTexto: "Como \xE9 ser escravizado na cidade?"
     respostaTexto: "\xC9 outro peso. A gente anda solto, vende, carrega, conversa
       com todo mundo. Mas cada moeda tem dono, e o dono n\xE3o sou eu."
-    respostaAudio: {fileID: 8300000, guid: 04e67340d45625a4d84531ac633d41ed, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 0fbc69f07c84ef44b9c51baf16f1d179, type: 3}
     substituirPor: no_2.1
     eventoId: 
   - id: no_2.1
@@ -38,14 +38,14 @@ MonoBehaviour:
     respostaTexto: "\xC9 diferente. Aqui voc\xEA apanha do feitor; l\xE1 voc\xEA
       apanha da pol\xEDcia. E l\xE1, se voc\xEA n\xE3o render, ele te vende pra ro\xE7a,
       que \xE9 com o que eles amea\xE7am a gente a vida inteira."
-    respostaAudio: {fileID: 8300000, guid: 9eab7c05f1f34d54e89925c406a570df, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 4811b6e81ae967d45a2b3f2050592a22, type: 3}
     substituirPor: no_2.2
     eventoId: 
   - id: no_2.2
     mostrarNoInicio: 0
     perguntaTexto: "Voc\xEA conhece gente que conseguiu sair?"
     respostaTexto: "Conhe\xE7o. E \xE9 tudo o que eu vou dizer sobre isso."
-    respostaAudio: {fileID: 8300000, guid: fabc99eb563e5c949a8cd1f1f3f7039f, type: 3}
+    respostaAudio: {fileID: 8300000, guid: d49bfdfb063eda9488e656e73c3e2a86, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_3
@@ -54,7 +54,7 @@ MonoBehaviour:
     respostaTexto: "Tudo. Carregador, barbeiro, quitandeira, ferreiro, carpinteiro,
       sapateiro, costureira, ama de leite, cozinheira de casa grande. Muita gente
       escravizada tem of\xEDcio de mestre e ningu\xE9m nunca perguntou o nome dela."
-    respostaAudio: {fileID: 8300000, guid: 81382b17c68579e4593b8d640529b990, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 4373180d5f699144d9c34b98cc350531, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_4
@@ -63,6 +63,6 @@ MonoBehaviour:
     respostaTexto: "Preciso. Os sacos est\xE3o no armaz\xE9m, atr\xE1s da tulha.
       Traz um de cada vez e dobra o joelho, sen\xE3o voc\xEA quebra as costas antes
       dos trinta."
-    respostaAudio: {fileID: 8300000, guid: d6390592ef8fa494cbd208c4dce125c8, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 878d96f04665077478fc638b634e037e, type: 3}
     substituirPor: 
     eventoId: fugitivo_aparecer

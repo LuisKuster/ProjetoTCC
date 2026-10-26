@@ -21,7 +21,7 @@ MonoBehaviour:
       O senhor sabe o que \xE9 isso?"
     respostaTexto: "Ele est\xE1 falando da Lei dos Sexagen\xE1rios, do ano passado,
       1885. Libertou quem passou dos sessenta."
-    respostaAudio: {fileID: 8300000, guid: d74e736df9211a74db2d2bc1d0938ba5, type: 3}
+    respostaAudio: {fileID: 8300000, guid: d124d8f1ef4323d4ca854848d25b047e, type: 3}
     substituirPor: no_1.1
     eventoId: 
   - id: no_1.1
@@ -29,7 +29,7 @@ MonoBehaviour:
     perguntaTexto: "Ent\xE3o o senhor est\xE1 livre! Por que ainda est\xE1 aqui?"
     respostaTexto: "\u2014 Estou \"livre\" e continuo aqui. A lei manda servir mais
       tr\xEAs anos como indeniza\xE7\xE3o ao senhor. Chamam isso de liberdade."
-    respostaAudio: {fileID: 8300000, guid: 9da15bc0a0c282a45968140b8dd09598, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 18a920417ccd5fe4a93552c64259d7e1, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2
@@ -38,7 +38,7 @@ MonoBehaviour:
     respostaTexto: "Porque quase ningu\xE9m chega aos sessenta na lavoura voc\xEA
       mesmo me perguntou isso hoje de manh\xE3. E quem chega j\xE1 n\xE3o rende.
       Libertaram justamente quem eles n\xE3o queriam mais sustentar."
-    respostaAudio: {fileID: 8300000, guid: a4b95a7097818974e8ebf8d71b0b253c, type: 3}
+    respostaAudio: {fileID: 8300000, guid: f4f2b03f324f87c4c9c3950779c737aa, type: 3}
     substituirPor: no_2.1
     eventoId: 
   - id: no_2.1
@@ -46,7 +46,7 @@ MonoBehaviour:
     perguntaTexto: E para onde vai um velho liberto?
     respostaTexto: "Pra lugar nenhum. Sem terra, sem sal\xE1rio, sem os seus por
       perto. Muitos voltam pra porta da fazenda pedir comida a quem os tinha."
-    respostaAudio: {fileID: 8300000, guid: 2c10f9e491635124ab9b9c64f7c570a3, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 6750cc2101461254fac010fc072303ad, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_3
@@ -55,7 +55,7 @@ MonoBehaviour:
     respostaTexto: "N\xE3o. Nasci do outro lado do mar. Cheguei menino, num navio
       que veio \xE0 noite, numa praia sem porto nenhum. Nunca entendi por que foi
       \xE0s escondidas."
-    respostaAudio: {fileID: 8300000, guid: 7fe0bf88f29cdef4cb0cb647d0c282b9, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 50408421cefec0e48991c8c635cd2dd6, type: 3}
     substituirPor: no_3.1
     eventoId: 
   - id: no_3.1
@@ -63,7 +63,7 @@ MonoBehaviour:
     perguntaTexto: "Eu sei por qu\xEA. O nome do senhor est\xE1 no livro do patr\xE3o:
       entrada em 1834."
     respostaTexto: "Mil oitocentos e trinta e quatro. E da\xED?"
-    respostaAudio: {fileID: 8300000, guid: fc68a716fe90fa24e9421499a656d2ce, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 96bfd052eed434d439fe87d7e0857103, type: 3}
     substituirPor: no_3.2
     eventoId: 
   - id: no_3.2
@@ -71,7 +71,7 @@ MonoBehaviour:
     perguntaTexto: "Desde 1831 era proibido trazer gente da \xC1frica. Quem desembarcou
       depois disso era livre por lei. O senhor nunca foi legalmente escravo."
     respostaTexto: "Cinquenta anos, mo\xE7o. Cinquenta anos."
-    respostaAudio: {fileID: 8300000, guid: 26026866e60a5624490c69c6db1fc1f9, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 7659d3a430f36904daec2d5c16fead72, type: 3}
     substituirPor: no_3.3
     eventoId: 
   - id: no_3.3
@@ -79,7 +79,7 @@ MonoBehaviour:
     perguntaTexto: "\u2014 O senhor pode ir \xE0 Justi\xE7a com isso."
     respostaTexto: "Eu n\xE3o sei ler. Mas voc\xEA acabou de ler pra mim. Talvez
       seja assim que come\xE7a."
-    respostaAudio: {fileID: 8300000, guid: a27409f2dae67cd45b373c1ca4152121, type: 3}
+    respostaAudio: {fileID: 8300000, guid: d61e2518fb110e34ab242663378f700b, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_4
@@ -88,6 +88,6 @@ MonoBehaviour:
     respostaTexto: "J\xE1 pensei, e j\xE1 vi gente conseguir. V\xE1 falar com o Z\xE9,
       l\xE1 na carro\xE7a. Ele vive na vila, sabe das coisas que a gente aqui n\xE3o
       sabe."
-    respostaAudio: {fileID: 8300000, guid: 0d8b8eeef930aad4c8801eac165a8dab, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 2414d6a0988fdaf4f8cd38c7fadece62, type: 3}
     substituirPor: 
     eventoId: ze_aparecer

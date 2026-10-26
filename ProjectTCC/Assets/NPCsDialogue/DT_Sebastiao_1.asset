@@ -19,7 +19,7 @@ MonoBehaviour:
     mostrarNoInicio: 1
     perguntaTexto: "Ol\xE1, quem \xE9 o senhor?"
     respostaTexto: "Meu nome \xE9 Sebasti\xE3o. Prazer."
-    respostaAudio: {fileID: 8300000, guid: fc9fd3e34bbaa2f45a27608b1c3b5737, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 4dded371e0e68244ab89f9f649252149, type: 3}
     substituirPor: no_1.1
     eventoId: 
   - id: no_1.1
@@ -27,7 +27,7 @@ MonoBehaviour:
     perguntaTexto: "H\xE1 quanto tempo o senhor est\xE1 aqui?"
     respostaTexto: Desde menino. Uns cinquenta anos neste cafezal. Perdi a conta
       dos anos e perdi o nome que me deram em casa.
-    respostaAudio: {fileID: 8300000, guid: 8e162e6a854b5574fb234309157eba54, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 079c45693bbcc6f43b3dff4ac3498db6, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2
@@ -35,7 +35,7 @@ MonoBehaviour:
     perguntaTexto: "Como \xE9 o trabalho?"
     respostaTexto: "Do escuro ao escuro. Na colheita, mais. Quem n\xE3o enche o cesto,
       apanha. \xC9 simples assim."
-    respostaAudio: {fileID: 8300000, guid: 3d73ee553e2656444b98772b5923a410, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 129b63c75c66e6545af6c2b82ee3179d, type: 3}
     substituirPor: no_2.1
     eventoId: 
   - id: no_2.1
@@ -44,7 +44,7 @@ MonoBehaviour:
     respostaTexto: "Reclamar tem pre\xE7o. Mas tem quem trabalhe devagar de prop\xF3sito,
       quem quebre a ferramenta, quem amanhe\xE7a doente. Cada um resiste do jeito
       que d\xE1."
-    respostaAudio: {fileID: 8300000, guid: 625c3fd0a79b3f24db82f29cabd3b9fc, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 0d0e1497ecd2fb74ab3a75ef5366c0c2, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_3
@@ -53,7 +53,7 @@ MonoBehaviour:
       sua idade?"
     respostaTexto: "Poucos. Muito poucos. A ro\xE7a come a gente bem antes disso.
       Eu sou o mais velho, e sou uma exce\xE7\xE3o, n\xE3o uma regra."
-    respostaAudio: {fileID: 8300000, guid: 016285a7962f0094983bf71c0e61b068, type: 3}
+    respostaAudio: {fileID: 8300000, guid: ce59175d4f615fc42a1c5586e806d029, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_4
@@ -61,6 +61,6 @@ MonoBehaviour:
     perguntaTexto: "O senhor poderia me dar mais algumas informa\xE7\xF5es?"
     respostaTexto: "Poderia, mas tenho que terminar meu servi\xE7o primeiro. Se quiser
       ajudar, joga os gr\xE3os naquela cesta. Assim a gente proseia mais cedo."
-    respostaAudio: {fileID: 8300000, guid: 4831809b0318b5241a07d5fdfa21c7bc, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 24f8626e1aadd8748a273a5c8b8ad314, type: 3}
     substituirPor: 
     eventoId: cafe_liberar
