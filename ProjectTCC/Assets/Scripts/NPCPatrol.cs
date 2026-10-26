@@ -23,15 +23,30 @@ public class NPCPatrol : MonoBehaviour
         public Transform olharPara;
     }
 
+    public enum AcaoFinal
+    {
+        Parar,     // fica parado no último ponto
+        Sumir,     // desativa o GameObject (dá pra reativar depois)
+        Destruir   // destrói o GameObject
+    }
+
     [Header("Caminho")]
     [SerializeField] private Ponto[] pontos;
 
     [Tooltip("Marcado: ao chegar no último ponto, volta ao primeiro. " +
-             "Desmarcado: faz o caminho de trás pra frente (vai e volta).")]
+             "Desmarcado: faz o caminho de trás pra frente (vai e volta). " +
+             "Ignorado se 'Somente Ida' estiver marcado.")]
     [SerializeField] private bool circular = true;
 
     [Tooltip("Começa a andar sozinho. Desmarque para NPCs parados.")]
     [SerializeField] private bool andarAoIniciar = true;
+
+    [Header("Somente ida")]
+    [Tooltip("Marcado: anda até o último ponto, espera a pausa dele e termina. Não volta.")]
+    [SerializeField] private bool somenteIda = false;
+
+    [Tooltip("O que acontece ao terminar o caminho (só vale com 'Somente Ida').")]
+    [SerializeField] private AcaoFinal acaoFinal = AcaoFinal.Parar;
 
     [Header("Velocidades")]
     [SerializeField] private float velocidade = 0.9f;
@@ -45,13 +60,20 @@ public class NPCPatrol : MonoBehaviour
 
     public bool Pausado => _pausadoExterno;
 
+    /// <summary>True depois que o NPC terminou um caminho de somente ida.</summary>
+    public bool Terminou { get; private set; }
+
     public event Action<int> AoChegarNoPonto;
+
+    /// <summary>Disparado uma vez quando o caminho de somente ida termina (antes de sumir/destruir).</summary>
+    public event Action AoTerminarCaminho;
 
     private int   _indice;
     private int   _direcao = 1;
     private float _fimDaPausa;
     private bool  _ativo;
     private bool  _pausadoExterno;
+    private bool  _chegouNoFim;
 
     void Start()
     {
@@ -77,6 +99,13 @@ public class NPCPatrol : MonoBehaviour
         {
             EstaAndando = false;
             OlharDuranteAPausa();
+            return;
+        }
+
+        // Chegou no último ponto (somente ida) e a pausa dele já acabou.
+        if (_chegouNoFim)
+        {
+            Finalizar();
             return;
         }
 
@@ -114,10 +143,37 @@ public class NPCPatrol : MonoBehaviour
     public void Iniciar() => _ativo = true;
     public void Parar()   { _ativo = false; EstaAndando = false; }
 
+    /// <summary>
+    /// Liga o modo somente ida em runtime (ex.: depois de um diálogo).
+    /// O NPC segue até o último ponto e faz a ação escolhida.
+    /// </summary>
+    public void AtivarSomenteIda(AcaoFinal acao)
+    {
+        somenteIda = true;
+        acaoFinal  = acao;
+        _direcao   = 1;
+        Iniciar();
+    }
+
+    /// <summary>Desliga o modo somente ida e volta ao comportamento normal (circular / vai e volta).</summary>
+    public void DesativarSomenteIda()
+    {
+        somenteIda   = false;
+        _chegouNoFim = false;
+        Terminou     = false;
+    }
+
     // ---------------- Interno ----------------
 
     void Avancar()
     {
+        if (somenteIda)
+        {
+            if (_indice >= pontos.Length - 1) _chegouNoFim = true;
+            else                              _indice++;
+            return;
+        }
+
         if (pontos.Length == 1) return;
 
         if (circular)
@@ -130,6 +186,23 @@ public class NPCPatrol : MonoBehaviour
 
         if (_indice >= pontos.Length)      { _indice = pontos.Length - 2; _direcao = -1; }
         else if (_indice < 0)              { _indice = 1;                 _direcao =  1; }
+    }
+
+    void Finalizar()
+    {
+        _ativo       = false;
+        _chegouNoFim = false;
+        EstaAndando  = false;
+        Terminou     = true;
+
+        AoTerminarCaminho?.Invoke();
+
+        switch (acaoFinal)
+        {
+            case AcaoFinal.Sumir:    gameObject.SetActive(false); break;
+            case AcaoFinal.Destruir: Destroy(gameObject);         break;
+            // Parar: não faz nada, já está parado.
+        }
     }
 
     void OlharDuranteAPausa()
@@ -145,6 +218,9 @@ public class NPCPatrol : MonoBehaviour
     int IndiceAnterior()
     {
         if (pontos.Length == 1) return 0;
+
+        if (somenteIda)
+            return _chegouNoFim ? _indice : Mathf.Max(_indice - 1, 0);
 
         if (circular)
             return (_indice - 1 + pontos.Length) % pontos.Length;
@@ -183,7 +259,7 @@ public class NPCPatrol : MonoBehaviour
             int prox = i + 1;
             if (prox >= pontos.Length)
             {
-                if (!circular) break;
+                if (!circular || somenteIda) break;
                 prox = 0;
             }
 
