@@ -481,6 +481,19 @@ PrefabInstance:
       propertyPath: eventBinder
       value: 
       objectReference: {fileID: 1645607026}
+    - target: {fileID: 2406520455774045226, guid: d770a1ad3fba33346aeaaf818f0febbd, type: 3}
+      propertyPath: m_Text
+      value: 'You can scroll this window using the scrollbars, or by using the thumbstick
+        on your controller.
+
+
+        The controller ray must be pointed at the UI
+        element you wish to scroll for the thumbstick to work.
+
+
+        Vertical
+        and horizontal scrolling are both supported. minheeuuu'
+      objectReference: {fileID: 0}
     - target: {fileID: 5151269707157598968, guid: d770a1ad3fba33346aeaaf818f0febbd, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
