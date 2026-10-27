@@ -10,6 +10,8 @@ using TMPro;
 /// </summary>
 public class ExpositionManager : MonoBehaviour
 {
+    public static event Action<Transform> OnPlayerReposicionado;
+    public static event Action<ExpositionEventSO> OnExposicaoIniciada;
     public static ExpositionManager Instance { get; private set; }
 
     [Header("Referências UI")]
@@ -105,6 +107,7 @@ public class ExpositionManager : MonoBehaviour
     {
         isShowing = true;
         skip = false;
+        OnExposicaoIniciada?.Invoke(data);
 
         // Primeira imagem já entra junto com o fade da tela
         int slideAtual = 0;
@@ -256,5 +259,6 @@ public class ExpositionManager : MonoBehaviour
         player.transform.SetPositionAndRotation(spawnPoint.position, spawnPoint.rotation);
 
         if (cc != null) cc.enabled = true;
+        OnPlayerReposicionado?.Invoke(spawnPoint);
     }
 }
