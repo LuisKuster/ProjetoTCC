@@ -38,7 +38,7 @@ MonoBehaviour:
     respostaTexto: "Aprendi a ler aos dezessete anos, com um estudante de Direito.
       Foi lendo que descobri a prova de que eu era livre. Levei essa prova \xE0 Justi\xE7a
       e o tribunal reconheceu minha liberdade. Ler foi a arma que me permitiram usar."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: 6e1ee38fdf929824489fd75639ba6beb, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2

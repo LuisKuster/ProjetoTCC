@@ -27,7 +27,7 @@ MonoBehaviour:
     perguntaTexto: "Sim. Encontrei os documentos que provam que o Tom\xE9 \xE9 livre."
     respostaTexto: "Que boa not\xEDcia, mo\xE7o. A gente consegue tirar ele daqui,
       ent\xE3o?"
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: f63899a45cab1054cb26f9bba90a894c, type: 3}
     substituirPor: no_1.2
     eventoId: 
   - id: no_1.2
