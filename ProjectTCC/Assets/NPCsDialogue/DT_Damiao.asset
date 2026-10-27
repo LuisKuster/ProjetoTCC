@@ -19,7 +19,7 @@ MonoBehaviour:
     mostrarNoInicio: 1
     perguntaTexto: "Opa, quem \xE9 voc\xEA?"
     respostaTexto: "N\xE3o grita. Me acharam, \xE9? Eu n\xE3o vou voltar."
-    respostaAudio: {fileID: 8300000, guid: edc219c3d22cf6649b63713afdd26efe, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 4c9f71eb4fd6722469f7035bd9140868, type: 3}
     substituirPor: no_1.1
     eventoId: 
   - id: no_1.1
@@ -27,7 +27,7 @@ MonoBehaviour:
     perguntaTexto: "Calma. Eu s\xF3 vim pegar um saco de caf\xE9."
     respostaTexto: "Um saco de caf\xE9. E quem te mandou buscar? O carroceiro ou
       o homem da casa?"
-    respostaAudio: {fileID: 8300000, guid: 4df12a85f9aecd149a17ca4798cd475f, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 124117a9f9e380c4fa66db4c66f89cd3, type: 3}
     substituirPor: no_1.2
     eventoId: 
   - id: no_1.2
@@ -35,7 +35,7 @@ MonoBehaviour:
     perguntaTexto: "O Z\xE9 me mandou."
     respostaTexto: "O Z\xE9. Ent\xE3o tudo bem. Se o Z\xE9 te mandou, voc\xEA n\xE3o
       \xE9 dos que apontam o dedo. Ele que me tirou daqui, faz um tempo."
-    respostaAudio: {fileID: 8300000, guid: 083a6e93aab733442848716b1f996c2f, type: 3}
+    respostaAudio: {fileID: 8300000, guid: b7d27c28bdc08e34fb1bb99ddcec6662, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_2
@@ -43,7 +43,7 @@ MonoBehaviour:
     perguntaTexto: "Voc\xEA era daqui?"
     respostaTexto: "Era. Fugi. N\xE3o fui o primeiro a fugir desta fazenda e n\xE3o
       vou ser o \xFAltimo. Fugir \xE9 a coisa mais antiga que a gente faz."
-    respostaAudio: {fileID: 8300000, guid: ca5b521ba6134fe4499745f66c528ab3, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 53d2c2da926bcf94782ead3391467eca, type: 3}
     substituirPor: no_2.1
     eventoId: 
   - id: no_2.1
@@ -51,7 +51,7 @@ MonoBehaviour:
     perguntaTexto: "Por que voc\xEA fugiu?"
     respostaTexto: "Porque dava. \xC9 o \xFAnico motivo que existe. Quem fica n\xE3o
       fica por querer, fica por n\xE3o dar."
-    respostaAudio: {fileID: 8300000, guid: 48ac368b9419acd4dbce91445205a2f9, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 773e88b2eb2a53a45a6cfcedfad258bd, type: 3}
     substituirPor: 
     eventoId: saco_liberar
   - id: no_3
@@ -59,7 +59,7 @@ MonoBehaviour:
     perguntaTexto: "E por que voc\xEA voltou?"
     respostaTexto: "Porque me ajudaram, e agora eu ajudo. Tem gente aqui dentro esperando
       a vez, e algu\xE9m tem que vir dizer pra onde ir."
-    respostaAudio: {fileID: 8300000, guid: 9056a080cd224534c809d1f3990e53a9, type: 3}
+    respostaAudio: {fileID: 8300000, guid: a48aead6ee69b5f4eaaa5c3d6b956b3c, type: 3}
     substituirPor: no_3.1
     eventoId: 
   - id: no_3.1
@@ -67,7 +67,7 @@ MonoBehaviour:
     perguntaTexto: "E pra onde voc\xEAs v\xE3o?"
     respostaTexto: "Santos. Tem um quilombo l\xE1, o Jabaquara. Dizem que \xE9 centenas
       de gente livre, e que quem organiza \xE9 um homem chamado Quintino de Lacerda."
-    respostaAudio: {fileID: 8300000, guid: 0e056e39c844b1f47b468d262a25713b, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 2de63c2ee3efd374f91759ebbecee888, type: 3}
     substituirPor: no_3.2
     eventoId: 
   - id: no_3.2
@@ -76,7 +76,7 @@ MonoBehaviour:
     respostaTexto: "\xC9 onde quem fugiu constr\xF3i vida. Planta, vende, casa, se
       defende. N\xE3o \xE9 buraco no mato, \xE9 gente vivendo. Existe desde que existe
       escravid\xE3o neste pa\xEDs."
-    respostaAudio: {fileID: 8300000, guid: 2823d0fe08c84f047a21617396d4abaa, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 2933ab94e0afd9f4aa51ba37092e0b2d, type: 3}
     substituirPor: no_3.3
     eventoId: 
   - id: no_3.3
@@ -85,7 +85,7 @@ MonoBehaviour:
     respostaTexto: "Sozinho ningu\xE9m chega. Tem os caifazes gente da cidade que
       esconde, transporta e avisa. Tem quem abra a porta de casa de madrugada e n\xE3o
       pergunte nome. Abolicionista de verdade n\xE3o \xE9 s\xF3 quem escreve no jornal."
-    respostaAudio: {fileID: 8300000, guid: ae312cc76d0520e408d3764f95ef57b7, type: 3}
+    respostaAudio: {fileID: 8300000, guid: ad332fec11f5b3943bea99ffe75e7899, type: 3}
     substituirPor: no_3.4
     eventoId: 
   - id: no_3.4
@@ -93,7 +93,7 @@ MonoBehaviour:
     perguntaTexto: "\xC9 perigoso demais."
     respostaTexto: "\xC9. Mas nem todo mundo \xE9 salvo pela caneta. A maioria n\xE3o
       tem advogado nem papel. O que sobra pra n\xF3s \xE9 a gente mesmo"
-    respostaAudio: {fileID: 8300000, guid: e1427f7f245a21a41ad3d845620118f4, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 74410708b57a33e4eb4043a289eb277c, type: 3}
     substituirPor: no_3.5
     eventoId: 
   - id: no_3.5
@@ -103,7 +103,7 @@ MonoBehaviour:
       trabalhe devagar, quem amanhe\xE7a doente, quem reze escondido o que mandaram
       esquecer, quem junte moeda nove anos pra comprar papel. Cada um faz o que d\xE1.
       Eu escolhi a mais r\xE1pida ,e a mais burra."
-    respostaAudio: {fileID: 8300000, guid: 0a7d23d3fa99dfb40960c631c162beef, type: 3}
+    respostaAudio: {fileID: 8300000, guid: ce62e2cb98bc70a43adf97309e10f67e, type: 3}
     substituirPor: no_3.5
     eventoId: 
   - id: no_4
@@ -112,6 +112,6 @@ MonoBehaviour:
       de caf\xE9?"
     respostaTexto: "Est\xE3o ali do outro lado. E n\xE3o esquece: voc\xEA n\xE3o
       me viu."
-    respostaAudio: {fileID: 8300000, guid: b0cb36d2f225c5245b27e5aff88fcbde, type: 3}
+    respostaAudio: {fileID: 8300000, guid: fe1ac403d26dcfd4a85e0c16bbd744f7, type: 3}
     substituirPor: 
     eventoId: saco_liberar
