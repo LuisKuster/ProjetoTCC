@@ -16,7 +16,74 @@ MonoBehaviour:
   slides:
   - imagem: {fileID: 0}
     aparecerEm: 0
-    legenda: Final menor
+    legenda: "Os pap\xE9is que eu tirei daquele cofre viraram processo. E n\xE3o
+      foram os \xFAnicos.\r\n \r\n"
+  - imagem: {fileID: 0}
+    aparecerEm: 6
+    legenda: "No ano seguinte, as fazendas come\xE7aram a amanhecer vazias. Gente
+      saindo em grupo, de madrugada, e a cidade escondendo quem chegava."
+  - imagem: {fileID: 0}
+    aparecerEm: 13
+    legenda: "At\xE9 o Ex\xE9rcito pediu pra n\xE3o ser usado na captura de fugitivos.\nN\xE3o
+      sobrou quem obrigasse ningu\xE9m a nada."
+  - imagem: {fileID: 0}
+    aparecerEm: 17
+    legenda: "N\xE3o sobrou quem obrigasse ningu\xE9m a nada.\r\n"
+  - imagem: {fileID: 0}
+    aparecerEm: 20
+    legenda: "Treze de maio de mil oitocentos e oitenta e oito. A princesa Isabel,
+      regente, assinou a Lei \xC1urea. Dois artigos. \xC9 tudo o que ela tem."
+  - imagem: {fileID: 0}
+    aparecerEm: 29
+    legenda: "Declarou extinta a escravid\xE3o \u2014 sem indenizar ningu\xE9m. E
+      sem terra, sem escola e sem trabalho garantido pra quem passou a vida inteira
+      construindo aquela riqueza.\r\n"
+  - imagem: {fileID: 0}
+    aparecerEm: 42
+    legenda: "Teve festa na rua. E teve quem dissesse, depois, que uma assinatura
+      tinha libertado um povo. N\xE3o foi."
+  - imagem: {fileID: 0}
+    aparecerEm: 48
+    legenda: "Foi conquistada. Por quem fugiu, por quem formou quilombo, por quem
+      processou, por quem escreveu no jornal, por quem trocou a folha do ch\xE1.\r\nA
+      princesa assinou o que j\xE1 n\xE3o dava mais pra segurar."
+  - imagem: {fileID: 0}
+    aparecerEm: 63
+    legenda: "O fazendeiro me disse, no dia em que me contratou, que se acabassem
+      com aquilo sem indeniz\xE1-lo, a Monarquia perdia o apoio dele no mesmo dia.\nCumpriu
+      a palavra. Os fazendeiros escravistas viraram republicanos em bloco"
+  - imagem: {fileID: 0}
+    aparecerEm: 77
+    legenda: "Em quinze de novembro de mil oitocentos e oitenta e nove, um ano e
+      meio depois da aboli\xE7\xE3o, o Imp\xE9rio caiu \u2014 empurrado justamente
+      por quem mais tinha a perder com o treze de maio."
+  - imagem: {fileID: 0}
+    aparecerEm: 89
+    legenda: "Eu procurei o Z\xE9, anos depois. Ele tinha ido pra cidade com o of\xEDcio
+      que j\xE1 tinha, e achou o porto cheio de imigrantes europeus, com a passagem
+      paga pelo governo, disputando o mesmo carregamento por menos."
+  - imagem: {fileID: 0}
+    aparecerEm: 102
+    legenda: "O Seu Sebasti\xE3o eu n\xE3o achei. Me disseram que ele ficou. Sessenta
+      e dois anos, sem terra e sem pra onde ir, no mesmo cafezal \u2014 agora por
+      um sal\xE1rio que n\xE3o pagava o quarto onde ele j\xE1 dormia."
+  - imagem: {fileID: 0}
+    aparecerEm: 116
+    legenda: "Sem terra e sem escola, foi isso que a liberdade virou pra quase todo
+      mundo.\r\nA lei acabou num dia. O que ela deixou de fazer durou o s\xE9culo
+      inteiro."
+  - imagem: {fileID: 0}
+    aparecerEm: 127
+    legenda: O Luiz Gama morreu em mil oitocentos e oitenta e dois. Quatro anos antes
+      de eu pisar naquela fazenda.
+  - imagem: {fileID: 0}
+    aparecerEm: 133
+    legenda: "N\xE3o viu o treze de maio. N\xE3o viu nada disso.\r\nV\xE3o lembrar
+      do nome dele, e tudo bem. Ele merece.\nMas se lembrarem s\xF3 do dele, erraram
+      a li\xE7\xE3o."
+  - imagem: {fileID: 0}
+    aparecerEm: 148
+    legenda: "Teve muita gente que fez o que podia\nNingu\xE9m fez isso sozinho.\r\n"
   duracaoSemAudio: 8
   extraHold: 0.5
   isEnding: 1
