@@ -83,8 +83,8 @@ MonoBehaviour:
   - id: no_4.1
     mostrarNoInicio: 0
     perguntaTexto: "Tenho que achar um jeito de tirar ele do escrit\xF3rio, mas como? "
-    respostaTexto: " a gente pode encehr ele de ch\xE1, alguma hora ele tenha que
-      ir no baneiro."
+    respostaTexto: "Ele toma ch\xE1 toda tarde, a vinte anos, se a folha for outra,
+      ele vai precisar do quintal, eu sei qual folha \xE9, minha av\xF3 me ensinou."
     respostaAudio: {fileID: 8300000, guid: 59d95422e42077641a49010194ecc392, type: 3}
     substituirPor: no_4.2
     eventoId: 
@@ -92,7 +92,7 @@ MonoBehaviour:
     mostrarNoInicio: 0
     perguntaTexto: "otima idea, aonde estao os ingredientes? eu fa\xE7o e trago para
       voce."
-    respostaTexto: Pega o cha ali na dispensa, que eu preparo.
-    respostaAudio: {fileID: 0}
+    respostaTexto: "Pega o ch\xE1 ali na dispensa, que eu preparo e levo pra ele."
+    respostaAudio: {fileID: 8300000, guid: 465c3e51c66e34c4f88bc465d07985c0, type: 3}
     substituirPor: no_4.2
     eventoId: cha_iniciado

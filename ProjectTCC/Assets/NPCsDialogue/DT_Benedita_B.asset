@@ -32,17 +32,15 @@ MonoBehaviour:
     eventoId: 
   - id: no_1.2
     mostrarNoInicio: 0
-    perguntaTexto: "Mais ou menos. Pela lei, seu filho ainda tem que trabalhar aqui
-      at\xE9 os 21."
+    perguntaTexto: "Sim e N\xE3o. Pela lei, ele tem que trabalhar at\xE9 os 21."
     respostaTexto: "Por qu\xEA? Se ele nasceu livre, por que tem que ficar?"
     respostaAudio: {fileID: 8300000, guid: 08aaebc27b3f75948b4c1ef359e5d509, type: 3}
     substituirPor: no_1.3
     eventoId: 
   - id: no_1.3
     mostrarNoInicio: 0
-    perguntaTexto: "A Lei do Ventre Livre deu a escolha ao senhor: quando a crian\xE7a
-      fizesse oito anos, ele podia entreg\xE1-la ao governo e receber uma indeniza\xE7\xE3o,
-      ou ficar com o trabalho dela at\xE9 os 21. "
+    perguntaTexto: "A Lei do Ventre Livre deu a escolha ao senhor:Ganhar indeniza\xE7\xE3o
+      ou ficar com ele at\xE9 os 21. "
     respostaTexto: "Ent\xE3o eu valia menos que o dinheiro que eles ofereceram por
       ele. Ele faz vinte e um em noventa e quatro. Eu vou ter cinquenta e tr\xEAs
       anos."

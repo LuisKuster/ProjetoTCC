@@ -51,18 +51,17 @@ MonoBehaviour:
   - id: no_3
     mostrarNoInicio: 1
     perguntaTexto: "Com o que voc\xEA trabalha na vila?"
-    respostaTexto: "Tudo. Carregador, barbeiro, quitandeira, ferreiro, carpinteiro,
-      sapateiro, costureira, ama de leite, cozinheira de casa grande. Muita gente
-      escravizada tem of\xEDcio de mestre e ningu\xE9m nunca perguntou o nome dela."
+    respostaTexto: "Tudo. Carregador, barbeiro, ferreiro, carpinteiro ate sapateiro.
+      Muita gente escravizada tem of\xEDcio de mestre e ningu\xE9m nunca perguntou
+      o nome dela."
     respostaAudio: {fileID: 8300000, guid: 4373180d5f699144d9c34b98cc350531, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_4
     mostrarNoInicio: 1
     perguntaTexto: "Voc\xEA parece cansado. Precisa de ajuda?"
-    respostaTexto: "Preciso. Os sacos est\xE3o no armaz\xE9m, atr\xE1s da tulha.
-      Traz um de cada vez e dobra o joelho, sen\xE3o voc\xEA quebra as costas antes
-      dos trinta."
+    respostaTexto: "Preciso. O saco est\xE1 no armaz\xE9m, atr\xE1s da tulha. Traz
+      ele e dobra o joelho, sen\xE3o voc\xEA quebra as costas antes dos trinta."
     respostaAudio: {fileID: 8300000, guid: 878d96f04665077478fc638b634e037e, type: 3}
     substituirPor: 
     eventoId: fugitivo_aparecer

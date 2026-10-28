@@ -60,16 +60,15 @@ MonoBehaviour:
     eventoId: 
   - id: no_3.1
     mostrarNoInicio: 0
-    perguntaTexto: "Eu sei por qu\xEA. O nome do senhor est\xE1 no livro do patr\xE3o:
-      entrada em 1834."
+    perguntaTexto: "O nome do senhor est\xE1 no livro do patr\xE3o: entrada em 1834."
     respostaTexto: "Mil oitocentos e trinta e quatro. E da\xED?"
     respostaAudio: {fileID: 8300000, guid: 96bfd052eed434d439fe87d7e0857103, type: 3}
     substituirPor: no_3.2
     eventoId: 
   - id: no_3.2
     mostrarNoInicio: 0
-    perguntaTexto: "Desde 1831 era proibido trazer gente da \xC1frica. Quem desembarcou
-      depois disso era livre por lei. O senhor nunca foi legalmente escravo."
+    perguntaTexto: Desde 1831 era proibido trazer gente de fora. O senhor nunca foi
+      legalmente escravo.
     respostaTexto: "Cinquenta anos, mo\xE7o. Cinquenta anos."
     respostaAudio: {fileID: 8300000, guid: 7659d3a430f36904daec2d5c16fead72, type: 3}
     substituirPor: no_3.3
