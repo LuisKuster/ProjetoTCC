@@ -20,7 +20,7 @@ MonoBehaviour:
     perguntaTexto: O que eu deveria fazer agora?
     respostaTexto: Procura documentos, qualquer coisa que ajude a gente, eu vou ir
       pro curando por aqui tambem.
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: ccece8f22d28d3946b0daae069d74eb2, type: 3}
     substituirPor: 
     eventoId: Iniciar_Pergaminhos
   - id: no_2
@@ -28,7 +28,7 @@ MonoBehaviour:
     perguntaTexto: Tem alguma ideia de como abrir o cofre?
     respostaTexto: "N\xE3o sou serralheiro. Mas ele parece um homem cuidadoso. Duvido
       que tenha deixado uma senha \xE0 vista. Talvez algum botao escondido."
-    respostaAudio: {fileID: 0}
+    respostaAudio: {fileID: 8300000, guid: f50d00283322f0e439da5411e919f614, type: 3}
     substituirPor: 
     eventoId: 
   - id: no_3

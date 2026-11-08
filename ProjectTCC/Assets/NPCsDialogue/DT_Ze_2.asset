@@ -78,6 +78,6 @@ MonoBehaviour:
     mostrarNoInicio: 1
     perguntaTexto: Ja tenho tudo que eu preciso, poderia me dar uma carona?
     respostaTexto: Claro,  sobe ai, eu te deixo na cidade.
-    respostaAudio: {fileID: 8300000, guid: daf157fb8902cf54784432ee2e814200, type: 3}
+    respostaAudio: {fileID: 8300000, guid: 140ef2f7780a92b41959d73c5234f953, type: 3}
     substituirPor: 
     eventoId: Final

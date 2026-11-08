@@ -25,31 +25,31 @@ MonoBehaviour:
   - imagem: {fileID: 0}
     aparecerEm: 10
     legenda: "Preciso encontrar um jeito de entrar e descobrir o que est\xE1 acontecendo. "
-  - imagem: {fileID: 21300000, guid: eed4b0eadd067cc4e909ce54e63693cd, type: 3}
+  - imagem: {fileID: 0}
     aparecerEm: 15
     legenda: "Ol\xE1. Sou novo na regi\xE3o e estou procurando trabalho. Ouvi dizer
       que o senhor poderia precisar de algu\xE9m."
-  - imagem: {fileID: 21300000, guid: 0ce781971a9a3f8499ac474006ccdcc6, type: 3}
+  - imagem: {fileID: 0}
     aparecerEm: 21
     legenda: "Trabalho? Agora todo mundo quer trabalho. Antigamente ningu\xE9m precisava
       pedir."
-  - imagem: {fileID: 21300000, guid: eed4b0eadd067cc4e909ce54e63693cd, type: 3}
+  - imagem: {fileID: 0}
     aparecerEm: 26
     legenda: "Sabe o que \xE9 ter o governo tirando o que \xE9 seu, artigo por artigo,
       sem lhe pagar um vint\xE9m?"
-  - imagem: {fileID: 21300000, guid: 0ce781971a9a3f8499ac474006ccdcc6, type: 3}
+  - imagem: {fileID: 0}
     aparecerEm: 32
     legenda: " Primeiro tomaram o tr\xE1fico. Depois tomaram os rec\xE9m-nascidos.
       Ano passado tomaram os velhos."
-  - imagem: {fileID: 21300000, guid: eed4b0eadd067cc4e909ce54e63693cd, type: 3}
+  - imagem: {fileID: 0}
     aparecerEm: 36
     legenda: "E ainda pagam a passagem de italiano pra vir pra c\xE1. Dizem que sai
       mais barato. Eu s\xF3 quero o caf\xE9 colhido."
-  - imagem: {fileID: 21300000, guid: eed4b0eadd067cc4e909ce54e63693cd, type: 3}
+  - imagem: {fileID: 0}
     aparecerEm: 42
     legenda: "Se acabarem com isso sem me indenizar, esta Monarquia perde o meu apoio
       no mesmo dia. E n\xE3o sou s\xF3 eu \u2014 \xE9 o Vale inteiro."
-  - imagem: {fileID: 21300000, guid: bfaf34bf140030b45b01df3564978dbe, type: 3}
+  - imagem: {fileID: 0}
     aparecerEm: 50
     legenda: "V\xE1 l\xE1 embaixo, procure a Benedita na cozinha. Ela te mostra o
       servi\xE7o. E n\xE3o me atrapalhe, tenho carta pra escrever."
